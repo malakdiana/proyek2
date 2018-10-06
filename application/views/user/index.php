@@ -154,7 +154,7 @@
 <?php foreach ($comingsoon as $key ) { ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
-                <a href="#" class="btn btn-success portfolio-banner-event">Soon</a>
+                <div class="btn btn-success portfolio-banner-event">Soon</div>
               <figure>
                 <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" class="img-fluid" alt="">
                 <a href="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" data-lightbox="portfolio" data-title="<?php echo $key->judulFilm ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
@@ -171,7 +171,7 @@
 <?php foreach ($nowplaying as $key ) { ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
-                <a href="#" class="btn btn-primary portfolio-banner-event">Now</a>
+                <div class="btn btn-primary portfolio-banner-event">Now</div>
               <figure>
                 <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" class="img-fluid" alt="">
                 <a href="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" data-lightbox="portfolio" data-title="<?php echo $key->judulFilm ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>

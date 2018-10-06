@@ -302,7 +302,7 @@
   </header>
  <div class="container">
     <div class="row">
-      <div class="[ col-xs-6 col-sm-offset-1 col-sm-8 ]">
+      <div class="[ col-xs-6 col-sm-offset-1 col-sm-12 ]">
         <ul class="event-list">
 <?php   foreach ($daftarFilm as $key ) {
   ?>
@@ -339,16 +339,6 @@
         </ul>
 
       </div>
-       <div class="[ col-xs-3 col-sm-offset-2 col-sm-3 sosmed] ">
-       <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;">  
-       
-<h5 align="left">Social</h5>
-<p align="left">
-<i class="fa fa-instagram"></i>&nbsp;Instagram : inicinema <br>
-<i class="fa fa-twitter"></i>&nbsp;Twitter : @inicinema<br>
-<i class="fa fa-phone"></i>&nbsp;Telepon : 087678987654</p>
-  </div>
-    </div>
   </div>
  
   </div>
