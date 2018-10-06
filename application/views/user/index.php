@@ -125,30 +125,41 @@
       <div class="container">
 
         <header class="section-header">
-          <h3 class="section-title">Film List</h3>
+          <h3 class="section-title">Daftar Film</h3>
         </header>
 
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Now Playing</li>
-              <li data-filter=".filter-card">Coming Soon</li>
+              <li data-filter="*" class="filter-active">Semua Film</li>
+              <li data-filter=".filter-app">Sedang Tayang</li>
+              <li data-filter=".filter-card">Akan Tayang</li>
              
             </ul>
           </div>
         </div>
+        <style>
+          #portfolio-flters li{
+            font-size: 16pt !important;
+          }
+          .portfolio-banner-event {
+            position: absolute;
+            z-index: 1000;
+            right: 2rem;
+            margin-top: 1rem;
+          }
+        </style>
 
         <div class="row portfolio-container">
 <?php foreach ($comingsoon as $key ) { ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
             <div class="portfolio-wrap">
+                <a href="#" class="btn btn-success portfolio-banner-event">Soon</a>
               <figure>
                 <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" class="img-fluid" alt="">
                 <a href="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" data-lightbox="portfolio" data-title="<?php echo $key->judulFilm ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="<?php echo site_url()?>/jadwal/deskripsi/<?php echo $key->noFilm?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
-
               <div class="portfolio-info">
                 <h4><a href="#"><?php echo $key->judulFilm ?></a></h4>
                 
@@ -160,12 +171,12 @@
 <?php foreach ($nowplaying as $key ) { ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
+                <a href="#" class="btn btn-primary portfolio-banner-event">Now</a>
               <figure>
                 <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" class="img-fluid" alt="">
                 <a href="<?php echo base_url()?>assets/upload/<?php echo $key->foto ?>" data-lightbox="portfolio" data-title="<?php echo $key->judulFilm ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="<?php echo site_url()?>/jadwal/deskripsi/<?php echo $key->noFilm?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
-
               <div class="portfolio-info">
                 <h4><a href="#"><?php echo $key->judulFilm ?></a></h4>
                 

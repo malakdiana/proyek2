@@ -292,8 +292,7 @@ td{
             <ul>
               <li><a href="<?php echo site_url()?>/profiluser/profil/">Profil</a></li>
               <li><a href="<?php echo site_url()?>/login/logout">Logout</a></li>
-          </li>
-          <?php   }else{ ?>
+          </l          <?php   }else{ ?>
           <li><a href="<?php echo site_url()?>/login">login</a></li>
           <?php   } ?>
 
@@ -327,22 +326,19 @@ td{
 
       </div>
        <div class="[ col-xs-3 col-sm-offset-2 col-sm-3 sosmed] ">
-       <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;">  
+       <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;background-color: #185d5e">  
        
-<h5 align="left">Social</h5>
-<p align="left">
-<i class="fa fa-instagram"></i>&nbsp;Instagram : inicinema <br>
-<i class="fa fa-twitter"></i>&nbsp;Twitter : @inicinema<br>
-<i class="fa fa-phone"></i>&nbsp;Telepon : 087678987654</p>
+<h5 align="center" style="font-size: 16pt;font-weight: bold;">Segera Pesan Tiket Disini</h5>
+<a href="<?php echo site_url("profiluser/pilihjam/".$this->uri->segment(3)) ?>" class="btn btn-success mb-3">PESAN</a>
   </div><br><br>
-    <div style="padding-left: 10px; padding-top: 23px; margin-right: -75px;">  
+    <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;background-color: #185d5e">  
        
 <p align="center" ><font size="6px" >Now Playing</font></p><hr color="white" style="margin-bottom: 3px; margin-top: -23px;" >
 <div class="row">
 <?php   foreach ($daftarJadwal as $row) {
 ?>
 <div class="col-md-3"><font size="24px"> <?php echo $row->namaStudio; ?></font></div>
-<div class="col-md-8" style="margin-left: -32px; margin-top: 30px"> <?php  echo $row->judulFilm; ?></div>
+<div class="col-md-8" style="margin-left: -32px; margin-top: 30px">  <a href="<?php echo site_url("jadwal/deskripsi/".$row->noFilm) ?>"><?php  echo $row->judulFilm; ?></a></div>
 <?php   } ?>
 </div>
   </div>
