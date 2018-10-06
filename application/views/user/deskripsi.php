@@ -231,6 +231,12 @@ td{
       width: 40px;
       padding: 10px 0px 9px;
     }
+    .btn-now-playing{
+      color: #ffffff;
+    }
+    .btn-now-playing:hover{
+      color: #18d26e;
+    }
   }
     
 
@@ -338,7 +344,7 @@ td{
 <?php   foreach ($daftarJadwal as $row) {
 ?>
 <div class="col-md-3"><font size="24px"> <?php echo $row->namaStudio; ?></font></div>
-<div class="col-md-8" style="margin-left: -32px; margin-top: 30px">  <a href="<?php echo site_url("jadwal/deskripsi/".$row->noFilm) ?>"><?php  echo $row->judulFilm; ?></a></div>
+<div class="col-md-8" style="margin-left: -32px; margin-top: 30px">  <a href="<?php echo site_url("jadwal/deskripsi/".$row->noFilm) ?>" class="btn-now-playing"><?php  echo $row->judulFilm; ?></a></div>
 <?php   } ?>
 </div>
   </div>
