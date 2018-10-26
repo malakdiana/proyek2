@@ -31,7 +31,7 @@
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('<?php echo base_url();?>assets/login/images/bg-01.jpg');">
-			<div class="wrap-login100">
+					<div class="wrap-login100">
 				
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
