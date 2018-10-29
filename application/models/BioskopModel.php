@@ -61,6 +61,18 @@ class BioskopModel extends CI_Model {
             return $query->result();
         }
     }
+    public function cekjadwal2(){
+        $this->db->select('*');
+        $this->db->from('film');
+        $this->db->join('jadwalfilm', 'film.noFilm = jadwalfilm.noFilm');
+        $this->db->join('datastudio', 'jadwalfilm.idStudio = datastudio.idStudio');
+         $this->db->group_by("jadwalfilm.idStudio");
+         $this->db->group_by("tanggalTayang");
+         $this->db->group_by("film.noFilm");
+         $this->db->order_by("tanggalTayang","asc");
+         $query = $this->db->get();
+          return $query->result();
+    }
     public function cekjadwal($tgl){
          //$tgl=date('Y-m-d');
          // $query = $this->db->query("SELECT * FROM film INNER join jadwalfilm on film.noFilm= jadwalfilm.noFilm WHERE jadwalfilm.tanggalTayang = $tgl GROUP by tanggalTayang");

@@ -161,7 +161,7 @@
                 <a href="<?php echo site_url()?>/jadwal/deskripsi/<?php echo $key->noFilm?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
               <div class="portfolio-info">
-                <h4><a href="#"><?php echo $key->judulFilm ?></a></h4>
+                <h4><a href="<?php echo site_url()?>/jadwal/deskripsi/<?php echo $key->noFilm?>"><?php echo $key->judulFilm ?></a></h4>
                 
               </div>
             </div>
