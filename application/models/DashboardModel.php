@@ -31,6 +31,9 @@ class DashboardModel extends CI_Model {
     {
         $tgl=date('Y-m-d');
         $this->db->where('tanggalBeli', $tgl);
+        $this->db->where('status', "dikonfirmasi");
+
+
        $this->db->select('sum(jumlah) as total');
        $this->db->from('saldo');
         $query = $this->db->get();

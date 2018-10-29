@@ -169,6 +169,7 @@ class ProfilUser extends CI_Controller {
         $this->load->view('user/tambahsaldo',$error);
       }else{
       $this->TambahSaldo->insertSaldo();
+      $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Terimakasih, Permintaan pengisian saldo sukses. Mohon tunggu konfirmasi dari admin <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         echo '<script>alert("sukses")</script>';
   $this->load->view('user/header');
       $this->load->view('user/tambahsaldo');
@@ -178,6 +179,13 @@ class ProfilUser extends CI_Controller {
 
   }
 
+public function createPdf($id){
+  $this->load->model('PesanTiketModel');
+  $data["list"]= $this->PesanTiketModel->getorder($id);
+  $data["kursi"]= $this->PesanTiketModel->getkursi($id);
+  $this->load->library('pdf');
+  $this->pdf->load_view('report/ticket',$data);
+}
 
 }
 

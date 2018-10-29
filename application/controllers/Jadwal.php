@@ -3,14 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jadwal extends CI_Controller {
 
-	public function index()
+	public function index($tgl='')
 	{
+		
+			$tgl2= date("Y-m-d");
+		
 			$this->load->model('BioskopModel');
-			 $data['daftarFilm'] = $this->BioskopModel->cekJadwal();
-			 $data['jamtayang'] = $this->BioskopModel->cekJam();
-			
-		$this->load->view('user/jadwal', $data);
+			if($tgl!=''){
+			 $data['daftarFilm'] = $this->BioskopModel->cekJadwal($tgl);
+			 $data['jamtayang'] = $this->BioskopModel->cekJam($tgl);
+			}else{
+				 $data['daftarFilm'] = $this->BioskopModel->cekJadwal($tgl2);
+			 $data['jamtayang'] = $this->BioskopModel->cekJam($tgl2);
+			}
+			$this->load->view('user/jadwal', $data);
 	}
+
 	public function studio($id)
 	{
 			$this->load->model('BioskopModel');

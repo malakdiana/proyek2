@@ -5,6 +5,22 @@
     body {
     background-color: rgb(220, 220, 220);
   }
+
+    .dropdown-toggle,
+    .dropdown-menu {
+        border-radius: 0px !important;
+    }
+    .dropdown-item:hover {
+        color: white;
+        background-color: #dc3545;
+    }
+    .btn-success {
+        width: 118%;
+    }
+    .dropdown:hover>.dropdown-menu {
+      display: block;
+    }
+
   .list {
     color: #ffffff;
     transition: 0.5s;
@@ -301,8 +317,26 @@
     </div>
   </header>
  <div class="container">
+ <div class="row"> 
+
+  <div class="dropdown">
+  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pilih Tanggal
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+  <?php $tgl= date("Y-m-d") ; 
+    for($i=0;$i<=4;$i++){
+      $tgl2 = date('Y-m-d', strtotime("+$i days", strtotime($tgl)));
+  ?> 
+    <li > <a class="dropdown-item" href="<?php echo site_url()?>/jadwal/index/<?php echo $tgl2;?>"><?php echo "$tgl2";?></a></li>
+     <?php } ?>
+  </ul>
+</div>
+  </div>
+</div><br><br>
     <div class="row">
+     <?=$this->session->flashdata('notif')?>
       <div class="[ col-xs-6 col-sm-offset-1 col-sm-12 ]">
+
         <ul class="event-list">
 <?php   foreach ($daftarFilm as $key ) {
   ?>

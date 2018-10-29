@@ -2,28 +2,28 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TabelFilm extends CI_Controller {
-     public function __construct()
-  {
-    parent::__construct();
-    if ($this->session->userdata('logged_in')) {
-      $session_data=$this->session->userdata('logged_in');
-      $data['username']=$session_data['username'];
-      $data['level']=$session_data['level'];
-      $current_controller = $this->router->fetch_class();
-      $this->load->library('acl');
-      if(!$this->acl->is_public($current_controller)){
-        if(!$this->acl->is_allowed($current_controller,$data['level'])){
-          //redirect('login/logout','refresh');
-          echo '<script>alert("anda tidak memiliki hak akses")</script>';
-          redirect('HomeAdmin','refresh');
-        }
-      }
-    }
-    else{
+  //    public function __construct()
+  // {
+  //   parent::__construct();
+  //   if ($this->session->userdata('logged_in')) {
+  //     $session_data=$this->session->userdata('logged_in');
+  //     $data['username']=$session_data['username'];
+  //     $data['level']=$session_data['level'];
+  //     $current_controller = $this->router->fetch_class();
+  //     $this->load->library('acl');
+  //     if(!$this->acl->is_public($current_controller)){
+  //       if($this->acl->is_allowed($current_controller,$data['level'])){
+  //         //redirect('login/logout','refresh');
+  //         echo '<script>alert("anda tidak memiliki hak akses")</script>';
+  //         redirect('HomeAdmin','refresh');
+  //       }
+  //     }
+  //   }
+  //   else{
 
-      redirect('Login','refresh');
-    }
-  }
+  //     redirect('Login','refresh');
+  //   }
+  // }
 
 	public function index()
 	{
@@ -34,9 +34,9 @@ class TabelFilm extends CI_Controller {
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
+         $this->load->view('admin/header');
         $data['daftarFilm'] = $this->BioskopModel->getFilm();
-        $this->load->view('daftarFilm', $data);
+        $this->load->view('admin/tabelFilm', $data);
 	}
 
   public function getFilm($id)
@@ -48,9 +48,9 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
         $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
+         $this->load->view('admin/header',$data);
         $data['daftarFilm'] = $this->BioskopModel->getDataFilm($id);
-        $this->load->view('detailFilm', $data);
+        $this->load->view('admin/detailFilm', $data);
   }
 
     public function addFilm(){
@@ -69,8 +69,8 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
-        $this->load->view('daftarFilm',$data);
+         $this->load->view('admin/header',$data);
+        $this->load->view('admin/tabelFilm',$data);
     }
     public function updateFilm($id)
     {
@@ -95,7 +95,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
+         $this->load->view('admin/header',$data);
             $this->load->view('edit_film_view', $data);
         } else {
             $config['upload_path'] = './assets/upload/';
@@ -149,7 +149,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
+         $this->load->view('admin/header',$data);
             $this->load->view('tambah_film_view');
         } else {
             $config['upload_path'] = './assets/upload/';
@@ -168,7 +168,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
             $id= $session_data['id'];
             $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         		$this->load->view('header',$data);
+         		$this->load->view('admin/header',$data);
                 $this->load->view('tambah_film_view', $error);
             }
             else{
@@ -184,8 +184,8 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
             $id= $session_data['id'];
             $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-        		$this->load->view('header',$data);
-                $this->load->view('daftarFilm', $data);
+        		$this->load->view('admin/header',$data);
+                $this->load->view('admin/tabelFilm', $data);
             }
             
         }

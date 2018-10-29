@@ -15,6 +15,7 @@
     <link href="<?php echo base_url()?>/assets/admin/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?php echo base_url()?>/assets/admin/dist/css/style.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>/assets/admin/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -196,17 +197,12 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url()?>/assets/admin/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url()?>assets/upload/<?php echo $this->session->userdata('logged_in')['foto'] ?>" alt="user" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                                <a class="dropdown-item" href="<?php echo site_url()?>/TabelProfil"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                <a class="dropdown-item" href="<?php echo site_url()?>/login/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                            
+                              
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -233,20 +229,21 @@
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelStudio/gridDinamis" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Studio </span></a></li>
                                 <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelJadwal" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Jadwal </span></a></li>
-                                 <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Film</span></a></li>
+
+                                 <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelFilm" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">Film</span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Transaksi </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index2.html" class="sidebar-link"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Pembelian Tiket </span></a></li>
-                                <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Detail Pembelian </span></a></li>
-                                <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Transaksi Saldo </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelPembelian/daftarpembelian" class="sidebar-link"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Pembelian Tiket </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelDetailPembelian" class="sidebar-link"><i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Detail Pembelian </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelSaldo" class="sidebar-link"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Transaksi Saldo </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">User Admin</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> User </span></a></li>
-                                <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Admin </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelUser" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> User </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo site_url()?>/tabelAdmin/daftaradmin" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Admin </span></a></li>
                             </ul>
                         </li>
                     </ul>

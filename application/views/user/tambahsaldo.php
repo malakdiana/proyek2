@@ -5,8 +5,9 @@
 <div align="left" style="background-color: green; font-size: 17px; padding: 10px; margin-bottom: 50px;">Pembayaran dapat dilakukan dengan transfer ke nomer rekening yang tertera dibawah ini, setelah melakukan proses transfer harap mengisi form konfirmasi.
 </div>
 
+  <?=$this->session->flashdata('notif')?>
 <div style="border-radius: 15px;background: #919093;
-    padding: 20px; width:800px; margin-left: 130px" align="center">
+    padding: 20px; width:700px; margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >
       <td width="200px" >
@@ -16,39 +17,39 @@
           Nomer Rekening <br> Nama Pemilik Rekening 
       </td>
       <td width="250px">
-         3456785678 <br> nana 
+         7663553553 <br> Malak Diana Dewi 
       </td>
   </tr>
 </table>
 </div>
 <div style="border-radius: 15px;background:#919093;
-    padding: 20px; width:800px; margin-top: 20px;margin-left: 130px" align="center">
+    padding: 20px; width:700px; margin-top: 20px;margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >
       <td width="200px" >
-        <img src="<?php echo base_url()?>assets/images/bca.png" width="100px">  
+        <img src="<?php echo base_url()?>assets/images/bni.png" width="100px">  
       </td>
       <td width="300px">
           Nomer Rekening <br> Nama Pemilik Rekening 
       </td>
       <td width="250px">
-         3456785678 <br> nana 
+         3456785678 <br> Malak Diana Dewi
       </td>
   </tr>
 </table>
 </div>
 <div style="border-radius: 15px;background: #919093;
-    padding: 20px; width:800px;margin-top: 20px;margin-left: 130px" align="center">
+    padding: 20px; width:700px;margin-top: 20px;margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >
       <td width="200px" >
-        <img src="<?php echo base_url()?>assets/images/bca.png" width="100px">  
+        <img src="<?php echo base_url()?>assets/images/bri.png" width="100px">  
       </td>
       <td width="300px">
           Nomer Rekening <br> Nama Pemilik Rekening 
       </td>
       <td width="250px">
-         3456785678 <br> nana 
+         45636737625 <br> Yudha Pradana 
       </td>
   </tr>
 </table>

@@ -2,28 +2,28 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TabelJadwal extends CI_Controller {
-       public function __construct()
-  {
-    parent::__construct();
-    if ($this->session->userdata('logged_in')) {
-      $session_data=$this->session->userdata('logged_in');
-      $data['username']=$session_data['username'];
-      $data['level']=$session_data['level'];
-      $current_controller = $this->router->fetch_class();
-      $this->load->library('acl');
-      if(!$this->acl->is_public($current_controller)){
-        if($this->acl->is_allowed($current_controller,$data['level'])){
-          //redirect('login/logout','refresh');
-          echo '<script>alert("anda tidak memiliki hak akses")</script>';
-          redirect('homeAdmin','refresh');
-        }
-      }
-    }
-    else{
+  //      public function __construct()
+  // {
+  //   parent::__construct();
+  //   if ($this->session->userdata('logged_in')) {
+  //     $session_data=$this->session->userdata('logged_in');
+  //     $data['username']=$session_data['username'];
+  //     $data['level']=$session_data['level'];
+  //     $current_controller = $this->router->fetch_class();
+  //     $this->load->library('acl');
+  //     if(!$this->acl->is_public($current_controller)){
+  //       if(!$this->acl->is_allowed($current_controller,$data['level'])){
+  //         //redirect('login/logout','refresh');
+  //         echo '<script>alert("anda tidak memiliki hak akses")</script>';
+  //         redirect('homeAdmin','refresh');
+  //       }
+  //     }
+  //   }
+  //   else{
 
-      redirect('Login','refresh');
-    }
-  }
+  //     redirect('Login','refresh');
+  //   }
+  // }
 
 
 	public function index()
@@ -35,11 +35,12 @@ class TabelJadwal extends CI_Controller {
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('admin/header');
+         
         
          $data['jadwal_list'] = $this->TabelJadwalModel->getAllJadwal();
          $data['film_list']= $this->TabelJadwalModel->getFilm();
          $data['studio_list']= $this->TabelJadwalModel->getStudio();
+         $this->load->view('admin/header');
        $this->load->view('admin/tabelJadwal',$data);
 		
 	}
@@ -52,7 +53,6 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $id= $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
         
          $data['jadwal_list'] = $this->TabelJadwalModel->getAllJadwal();
          $data['film_list']= $this->TabelJadwalModel->getFilm();
@@ -68,28 +68,31 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
          redirect('TabelJadwal','refresh');
     }
 
-    public function deleteJadwal()
+    public function deleteJadwal($id)
     {
         $this->load->model('TabelJadwalModel');
-        $id = $this->input->post('idJadwal'); 
-        $this->TabelJadwalModel->deleteJAdwal($id);
+        $this->TabelJadwalModel->deleteJadwal($id);
+        echo '<script>alert("sukses delete data")</script>';
+         redirect('TabelJadwal','refresh');
     }
     public function updateJadwal()
     {
         $this->load->model('TabelJadwalModel');
         $id = $this->input->post('id'); 
         $this->TabelJadwalModel->updateJadwal($id);
+
        
     }
-    public function updateJadwalById($id)
-    {
+    public function updateJadwalById()
+  {
+   $id = $this->input->post('idJadwal');
         $this->load->model('TabelJadwalModel');
           $session_data=$this->session->userdata('logged_in');
         $data['username']=$session_data['username'];
         $data['id'] = $session_data['id'];
         $this->load->model('ModelTabelAdmin');
 $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('header',$data);
+         $this->load->view('admin/header',$data);
         $data['list']= $this->TabelJadwalModel->getJadwal($id);
          $data['film_list']= $this->TabelJadwalModel->getFilm();
          $data['studio_list']= $this->TabelJadwalModel->getStudio();
@@ -100,7 +103,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
        $this->form_validation->set_rules('jadwal', 'Jadwal', 'trim|required');
           $this->form_validation->set_rules('harga', 'Harga', 'trim|required');
     if ($this->form_validation->run()==FALSE) {
-      $this->load->view('edit_jadwal_view',$data);
+      //$this->load->view('edit_jadwal_view',$data);
     }else{
       $this->TabelJadwalModel->updateJadwal($id);
        echo '<script>alert("sukses update data")</script>';

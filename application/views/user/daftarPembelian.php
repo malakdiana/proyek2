@@ -13,8 +13,9 @@
                                     <td><b>Tanggal</b></td>
                                     <td><b>Judul Film</b></td>
                                     <td><b>Studio</b></td>
-                                     <td><b>QR</b></td>
+                                     
                                     <td><b>Total </b></td>
+                                    <td><b>Tiket</b></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,8 +26,9 @@
                                         <td><?php echo $key->tanggalPesan ?></td>
                                         <td><?php echo $key->judulFilm ?></td>
                                         <td><?php echo $key->namaStudio ?></td>
-                                      <td><img src="<?php echo base_url().'assets/images/'.$key->noPembelian.'.png' ?>" alt=""></td>
                                         <td><?php echo $key->totalHarga?></td>
+                                      <td><a href="<?php echo base_url()?>index.php/ProfilUser/createPdf/<?php echo $key->noPembelian?>"><button class="btn btn-success">Download Tiket</button></a></td>
+                                        
                                     
                   
                                     </tr>

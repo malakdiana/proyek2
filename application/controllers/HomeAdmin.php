@@ -22,13 +22,9 @@ class HomeAdmin extends CI_Controller {
         $data3['konfirmasi']=$this->DashboardModel->infoSaldo();
         $data3['filmPersen']=$this->DashboardModel->film();
         $data3['tayang']=$this->DashboardModel->tayang();
-
-
-
-
 		//$data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-        $this->load->view('admin/header');
+        $this->load->view('admin/header',$data);
         $data1['daftarAdmin'] = $this->ModelTabelAdmin->getAllAdmin();
         $this->load->model('BioskopModel');
         $data1['daftarfilm'] = $this->BioskopModel->getFilm();

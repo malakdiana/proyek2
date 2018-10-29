@@ -34,7 +34,7 @@
 					<div class="wrap-login100">
 				
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						<i class="zmdi zmdi-movie"></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">

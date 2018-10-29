@@ -102,6 +102,9 @@ class PesanTiketModel extends CI_Model {
        $this->db->select('*');
         $this->db->from('pembelian');
          $this->db->where('noPembelian',$no);
+           $this->db->join('jadwalfilm', 'jadwalfilm.idJadwal = pembelian.idJadwal');
+        $this->db->join('film', 'jadwalfilm.noFilm = film.noFilm');
+         $this->db->join('datastudio', 'jadwalfilm.idStudio = datastudio.idStudio');
           $query = $this->db->get();
         return $query->result();
     }
@@ -117,4 +120,14 @@ class PesanTiketModel extends CI_Model {
         $query = $this->db->get();
         return $query->result();
       }
+      public function getKursi($no){
+         $this->db->select('*');
+        $this->db->from('detailpembelian');
+        $this->db->where('noPembelian',$no);
+        $query = $this->db->get();
+        return $query->result();
+      }
+
+
+
 }
