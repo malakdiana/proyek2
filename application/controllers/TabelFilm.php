@@ -13,7 +13,7 @@ class TabelFilm extends CI_Controller {
   //     $this->load->library('acl');
   //     if(!$this->acl->is_public($current_controller)){
   //       if($this->acl->is_allowed($current_controller,$data['level'])){
-  //         //redirect('login/logout','refresh');
+    //         //redirect('login/logout','refresh');
   //         echo '<script>alert("anda tidak memiliki hak akses")</script>';
   //         redirect('HomeAdmin','refresh');
   //       }

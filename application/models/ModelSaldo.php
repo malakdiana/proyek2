@@ -69,6 +69,8 @@ $object2 = array('saldo'=>$saldo2, );
 
 	public function getAllSaldo()
     {
+        $this->db->select("saldo.*,(select nama from useradmin where idUserAdmin=saldo.username) as namaUser");
+        $this->db->order_by("tanggalBeli","asc");
         $query = $this->db->get('saldo');
         if($query->num_rows()>0){
             return $query->result();

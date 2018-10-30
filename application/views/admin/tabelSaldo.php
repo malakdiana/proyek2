@@ -40,6 +40,7 @@
                                             <tr>
                                     
                                                <td><b>Id User</b></td>
+                                               <td><b>Nama User</b></td>
                                     <td><b>Tanggal Transaksi</b></td>
                                     <td><b>Bukti Transfer</b></td>
                                     <td><b>Status</b></td>
@@ -53,6 +54,7 @@
                                     <tr>
 
                                         <td><?php echo $key->username ?></td>
+                                        <td><?php echo $key->namaUser ?></td>
                                         <td><?php echo date('d-n-Y', strtotime($key->tanggalBeli)) ?></td>
                                         <td>
                                         <div class="portfolio-wrap"><figure><a href="<?php echo base_url()?>assets/upload/buktisaldo/<?php echo $key->bukti;?>" data-lightbox="portfolio" data-title="<?php echo $key->username ?>" class="link-preview" title="Preview">
@@ -62,13 +64,6 @@
                                         <td><?php echo $key->jumlah ?></td>
                                         <td>
                                             <!-- <a href="<?php// echo site_url()?>/TabelSaldo/update/<?php //echo $key->idTransaksi; ?>"><button class="btn btn-secondary">Update</button></a> -->
-
-
-
-  <a href="javascript:void(0);" onclick="showmodal('<?php echo $key->idTransaksi ?>','<?php echo $key->username ?>','<?php echo $key->jumlah ?>')" data-id="<?php echo $key->idTransaksi ?>" data-nama="<?php echo  $key->username ?>" data-jumlah="<?php echo $key->jumlah ?>" data-toggle="modal" data-target="#edit-data">
-    <button data-toggle="modal"  class="btn btn-info">Konfirmasi</button>
-</a>
-
                                             <a href="<?php echo site_url()?>/TabelSaldo/delete/<?php echo $key->idTransaksi; ?>" onclick="return confirm('Are you sure to delete this data permanently?');"><button class="btn btn-warning">Delete</button></a>
                                         </td>
                                     </tr>

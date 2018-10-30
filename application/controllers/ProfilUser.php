@@ -37,7 +37,7 @@ class ProfilUser extends CI_Controller {
         $data= $key->idpembelian;
       }
   $lastid = (int) substr($data, -4);
-  $newid =$lastid+1;
+  $newid = $lastid+1;
   $id = substr("0000".$newid, -4);
   return 'G'.$id;
 
@@ -171,7 +171,7 @@ class ProfilUser extends CI_Controller {
       $this->TambahSaldo->insertSaldo();
       $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Terimakasih, Permintaan pengisian saldo sukses. Mohon tunggu konfirmasi dari admin <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         echo '<script>alert("sukses")</script>';
-  $this->load->view('user/header');
+      $this->load->view('user/header');
       $this->load->view('user/tambahsaldo');
       
     }

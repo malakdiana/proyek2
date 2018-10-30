@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TambahSaldo extends CI_Model {
-public function insertSaldo(){
-	$stts = "belum dikonfirmasi";
+	public function insertSaldo(){
+		$stts = "belum dikonfirmasi";
 		$object = array(
 			'username' =>$this->session->userdata('logged_in')['id'],
 			'tanggalBeli' => date("Y-m-d") ,
@@ -13,5 +13,5 @@ public function insertSaldo(){
 			);
 		$this->db->insert('saldo',$object);
 
-		}
+	}
 	}
