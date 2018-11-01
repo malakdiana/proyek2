@@ -277,7 +277,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                         <div class="comment-footer">
                                             <span class="text-muted float-right"><?php echo $key->tanggalBeli?></span> 
                                             
-                                            <a href="javascript:void(0);" onclick="showmodal('<?php echo $key->idTransaksi ?>','<?php echo $key->idUserAdmin ?>','<?php echo $key->jumlah ?>')" data-id="<?php echo $key->idTransaksi ?>" data-nama="<?php echo  $key->nama ?>" data-jumlah="<?php echo $key->jumlah ?>" data-toggle="modal" data-target="#edit-data">
+                                            <a href="javascript:void(0);" onclick="showmodal('<?php echo $key->idTransaksi ?>','<?php echo $key->idUserAdmin ?>','<?php echo $key->jumlah ?>','<?php echo $key->email ?>')" data-id="<?php echo $key->idTransaksi ?>" data-nama="<?php echo  $key->nama ?>" data-jumlah="<?php echo $key->jumlah ?>" data-toggle="modal" data-target="#edit-data">
                                             <button type="button" class="btn btn-cyan btn-sm">Konfirmasi</button>
                                             </a>
                                             <a class="btn default btn-outline image-popup-vertical-fit el-link" href="<?php echo base_url()?>assets/upload/buktisaldo/<?php echo $key->bukti?>">
@@ -380,6 +380,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                 name="jumlah" ></textarea>
                             </div>
                         </div>
+                        <input type="text" hidden="true" id="email" name="email">
                     <div class="modal-footer">
                         <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
                         <?php echo form_close(); ?>
@@ -394,10 +395,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
  
 
 <script type="text/javascript">
-    function showmodal(id,user,jml){
+    function showmodal(id,user,jml,email){
         document.getElementById('id').value = id;
         document.getElementById('nama').value = user;
         document.getElementById('jumlah').value = jml;
+        document.getElementById('email').value = email;
     }
 </script>
     <!-- ============================================================== -->

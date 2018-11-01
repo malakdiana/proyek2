@@ -37,7 +37,7 @@
 						<i class="zmdi zmdi-movie"></i>
 					</span>
 
-					<span class="login100-form-title p-b-34 p-t-27">
+					<span class="login100-form-title">
 						Log in
 					</span>
 <?php echo form_open('login/cekLogin');?>
