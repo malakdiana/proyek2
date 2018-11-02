@@ -335,11 +335,15 @@ td{
        <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;background-color: #185d5e">  
        
 <h5 align="center" style="font-size: 16pt;font-weight: bold;">Segera Pesan Tiket Disini</h5>
-<a href="<?php echo site_url("profiluser/pilihjam/".$this->uri->segment(3)) ?>" class="btn btn-success mb-3">PESAN</a>
+<?php if(is_null($daftarFilm[0]->idJadwal)){ ?>
+<a href="" class="btn btn-success mb-3">Coming Soon</a>
+<?php }else{ ?>
+<a href="<?php echo site_url("profiluser/pilihjam/".$this->uri->segment(3)) ?>" class="btn btn-success mb-3">Pesan</a>
+<?php } ?>
   </div><br><br>
     <div style="border-left: 2px solid white; border-top: 2px solid white;border-right: 2px solid white;border-bottom: 2px solid white; padding-left: 10px; padding-top: 23px; margin-right: -75px;background-color: #185d5e">  
        
-<p align="center" ><font size="6px" >Now Playing</font></p><hr color="white" style="margin-bottom: 3px; margin-top: -23px;" >
+<p align="center" ><font size="6px" >Sedang Tayang</font></p><hr color="white" style="margin-bottom: 3px; margin-top: -23px;" >
 <div class="row">
 <?php   foreach ($daftarJadwal as $row) {
 ?>

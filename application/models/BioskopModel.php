@@ -49,8 +49,12 @@ class BioskopModel extends CI_Model {
 
     public function getDataFilm($id)
     {
-        $this->db->where('noFilm', $id);
-        $query = $this->db->get('film');
+        
+        $this->db->select('*');
+        $this->db->from('film');
+        $this->db->join('jadwalfilm', 'film.noFilm = jadwalfilm.noFilm', 'left');
+        $this->db->where('film.noFilm', $id);
+        $query = $this->db->get();
         return $query->result();
     }
 
