@@ -349,7 +349,7 @@
             </time>
 
             </a>
-            <img alt="My 24th Birthday!" height="2000px" src="<?php echo base_url()?>/assets/upload/<?php echo $key->foto ?>" />
+            <img alt="My 24th Birthday!" src="<?php echo base_url()?>/assets/upload/<?php echo $key->foto ?>" />
             <div class="info" style="background: #000000">
               <h2 class="title" style="color: #ffffff"><?php echo $key->judulFilm ?></h2>
               <hr style="margin-top: 0px; margin-bottom: 2; margin-left: 10; border: 0;border-top: 2px solid #17a2b8;"> 
