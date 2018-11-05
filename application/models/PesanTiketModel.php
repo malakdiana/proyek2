@@ -10,11 +10,19 @@ class PesanTiketModel extends CI_Model {
         $this->db->from('film');
         $this->db->join('jadwalfilm', 'film.noFilm = jadwalfilm.noFilm');
         $this->db->join('datastudio', 'jadwalfilm.idStudio = datastudio.idStudio');
-         //$this->db->where('tanggalTayang', $tgl);
+         $this->db->where('tanggalTayang >=', $tgl);
        //  $this->db->group_by("tanggalTayang");
          $this->db->group_by("film.noFilm");
          $query = $this->db->get();
-        return $query->result();
+          $x=$query->num_rows();
+        if($x>0){
+             $this->session->set_flashdata('notif','');
+            return $query->result();
+    }
+         else{
+            $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Maaf Jadwal Untuk Saat Ini Masih Kosong, Anda Dapat Memeriksa Jadwal Lainnya di Atas.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+              return $query->result();
+         }
 	}
         public function getFilmById($film){
         $this->db->select('*');

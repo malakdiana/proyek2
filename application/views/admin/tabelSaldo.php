@@ -71,8 +71,8 @@
                                            
                                        <tfoot>
                                             <tr>
-                                             
                                               <td><b>Id User</b></td>
+                                               <td><b>Nama User</b></td>
                                     <td><b>Tanggal Transaksi</b></td>
                                     <td><b>Bukti Transfer</b></td>
                                     <td><b>Status</b></td>
