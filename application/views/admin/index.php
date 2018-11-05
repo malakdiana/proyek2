@@ -382,7 +382,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         </div>
                         <input type="text" hidden="true" id="email" name="email">
                     <div class="modal-footer">
-                        <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
+                        <button class="btn btn-info" type="submit"> Konfirmasi&nbsp;</button>
                         <?php echo form_close(); ?>
                         <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
                     </div>

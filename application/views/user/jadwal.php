@@ -280,7 +280,7 @@
      
         top: 0;
         left: 0;">
-<div style="background: rgba(0,0,0,.2); color: white; height: 1361px; padding: 50px; text-align: center; width: 1320px;  width: 100%; min-height: 100%;
+<div style=" color: white; height: 1361px; padding: 50px; text-align: center; width: 1320px;  width: 100%; min-height: 100%;
         min-width: 1024px; height: auto;  ">
 
 
@@ -349,14 +349,14 @@
             </time>
 
             </a>
-            <img alt="My 24th Birthday!" src="<?php echo base_url()?>/assets/upload/<?php echo $key->foto ?>" />
-            <div class="info">
-              <h2 class="title" style="color: #17a2b8"><?php echo $key->judulFilm ?></h2>
-              <hr style="margin-top: 0px; margin-bottom: 2; margin-left: 10; border: 0;border-top: 2px solid rgba(25, 24, 24, 0.5);"> 
-              <p class="desc"  style="color: #17a2b8">Tanggal : <?php echo $key->tanggalTayang ?> </p> 
-              <p class="desc"  style="color: #17a2b8">HTM : Rp <?php echo $key->harga ?> </p>
-              <p class="desc"  style="color: #17a2b8"><?php echo $key->genre?> | <?php echo $key->durasi ?> MENIT</p>
-              <div align="right">
+            <img alt="My 24th Birthday!" height="2000px" src="<?php echo base_url()?>/assets/upload/<?php echo $key->foto ?>" />
+            <div class="info" style="background: #000000">
+              <h2 class="title" style="color: #ffffff"><?php echo $key->judulFilm ?></h2>
+              <hr style="margin-top: 0px; margin-bottom: 2; margin-left: 10; border: 0;border-top: 2px solid #17a2b8;"> 
+              <p class="desc"  style="color: #ffffff">Tanggal : <?php echo $key->tanggalTayang ?> </p> 
+              <p class="desc"  style="color: #ffffff">HTM : Rp <?php echo $key->harga ?> </p>
+              <p class="desc"  style="color: #ffffff"><?php echo $key->genre?> | <?php echo $key->durasi ?> MENIT</p>
+              <div align="left">
                &nbsp;&nbsp;<?php foreach ($jamtayang as $row) {
 
                 if( $key->noFilm == $row->noFilm && $key->idStudio == $row->idStudio && $key->tanggalTayang == $row->tanggalTayang ){
