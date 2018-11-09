@@ -47,12 +47,18 @@ class ModelTabelUser extends CI_Model {
         $this->db->where('idUserAdmin', $id);
         $this->db->delete('useradmin');
     }
-    public function updateUser($id)
+    public function updateUser()
     {
+        
         $password= $this->input->post('password');
-		$md5=md5($password);
-		$level = "user";
-        $object = array('username' => $this->input->post('username'), 'password' => $md5,'level' => $level, 'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'), 'foto' => $this->upload->data('file_name'), 'saldo' => $this->input->post('saldo'),);
+        $password2= $this->input->post('password2');
+        $id = $this->input->post('idUserAdmin');
+        if($password==$password2){
+             $object = array('username' => $this->input->post('username'), 'password' => $password, 'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'),'saldo' => $this->input->post('saldo'),);
+        }else{
+          $md5=md5($password);
+            $object = array('username' => $this->input->post('username'), 'password' => $md5, 'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'),'saldo' => $this->input->post('saldo'),); 
+        }
         $this->db->where('idUserAdmin', $id);
         $this->db->update('useradmin', $object);
     }

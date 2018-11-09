@@ -26,10 +26,15 @@ class ProfilUser extends CI_Controller {
   }
   public function updatePass(){
     $this->load->model('ModelProfilUser');
-    $this->ModelProfilUser->updatePass();
-           
-            $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-            redirect('ProfilUser/profil', 'refresh');
+        $pass=MD5($this->input->post('password1'));
+        if($pass==($this->session->userdata('logged_in')['password'])){
+           $this->ModelProfilUser->updatePass(); 
+           $this->session->set_flashdata('notif2','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                redirect('ProfilUser/profil', 'refresh');
+        }else{
+            $this->session->set_flashdata('notif2','<div class="alert alert-success" role="alert"> Password lama salah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                redirect('ProfilUser/profil', 'refresh');
+        };
   }
 
   public function updateFoto(){

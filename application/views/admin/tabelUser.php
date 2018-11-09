@@ -62,7 +62,7 @@
                                         <td><?php echo $key->saldo ?></td>
                                         <td>
                                             <a href="javascript:void(0);" 
-                                            onclick="showmodal('<?php echo $key->idUserAdmin ?>','<?php echo $key->username ?>','<?php echo $key->password ?>','<?php echo $key->nama ?>','<?php echo $key->alamat ?>','<?php echo $key->telepon ?>','<?php echo $key->email ?>','<?php echo $key->foto ?>')"
+                                            onclick="showmodal('<?php echo $key->idUserAdmin ?>','<?php echo $key->username ?>','<?php echo $key->password ?>','<?php echo $key->nama ?>','<?php echo $key->alamat ?>','<?php echo $key->telepon ?>','<?php echo $key->email ?>','<?php echo $key->saldo ?>')"
                                                 data-id="<?php echo $key->idUserAdmin ?>" 
                                                 data-username="<?php echo $key->username ?>" 
                                                 data-password="<?php echo $key->password ?>"
@@ -70,7 +70,7 @@
                                                 data-alamat="<?php echo $key->alamat ?>"
                                                 data-telepon="<?php echo $key->telepon ?>"
                                                 data-email="<?php echo $key->email ?>"
-                                                data-foto="<?php echo $key->foto ?>" 
+                                                data-saldo="<?php echo $key->saldo ?>" 
                                                 data-toggle="modal" 
                                                 data-target="#myModalEdit"><button class="btn btn-secondary">Update</button></a>
                                             <a href="<?php echo site_url()?>/TabelUser/deleteUser/<?php echo $key->idUserAdmin; ?>" onclick="return confirm('Are you sure to delete this data permanently?');"><button class="btn btn-warning">Delete</button></a>
@@ -202,9 +202,9 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Data</h4>
                 </div>
-     <?php echo form_open_multipart('TabelUser/update'); ?>
+     <?php echo form_open_multipart('TabelUser/updateUser'); ?>
                 <div class="form-group">
-                <input type="text" id="idUserAdmin" hidden="">
+                <input type="text" name="idUserAdmin" id="idUserAdmin" hidden="">
                 <input type="text" name="password2"  id="password2" hidden="">
                 <label for="">Username</label>
                 <input type="text" class="form-control" id="username" name="username" value="" placeholder="username" >
@@ -232,8 +232,8 @@
                 </div>
               
                 <div class="form-group">
-                <label for="col-lg-2 col-sm-2 control-label">Foto</label>
-                <input type="text" class="form-control" name="foto" id="foto" value="" placeholder="" >
+                <label for="col-lg-2 col-sm-2 control-label">Saldo</label>
+                <input type="text" class="form-control" name="saldo" id="saldo" value="" placeholder="" >
                 </div>
                 <center><button type="submit" class="btn btn-primary">Submit</button></center>
                 <?php echo form_close(); ?>
@@ -250,7 +250,7 @@
     <!-- ============================================================== -->
      <script src="<?php echo base_url()?>assets/admin/libs/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-    function showmodal(id,username,password,nama,alamat,telepon,email,foto){
+    function showmodal(id,username,password,nama,alamat,telepon,email,saldo){
         document.getElementById('idUserAdmin').value = id;
         document.getElementById('username').value=username;
         document.getElementById('nama').value=nama;
@@ -259,7 +259,7 @@
         document.getElementById('email').value=email;      
         document.getElementById('alamat').value=alamat;
         document.getElementById('telepon').value=telepon;
-         document.getElementById('foto').value=foto;
+         document.getElementById('saldo').value=saldo;
 
         
     }

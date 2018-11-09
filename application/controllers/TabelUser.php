@@ -70,6 +70,16 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
         $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('TabelUser', 'refresh');
     }
+    public function updateUser(){
+      $this->load->model('ModelTabelUser');
+
+       $this->ModelTabelUser->updateUser();
+   
+       //$data['daftarAdmin'] = $this->ModelTabelAdmin->getAllAdmin();
+                $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                redirect('TabelUser/daftarUser', 'refresh');
+
+    }
 
     public function update($id)
     {
