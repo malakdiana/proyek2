@@ -6,7 +6,7 @@
 </div>
 
   <?=$this->session->flashdata('notif')?>
-<div style="border-radius: 15px;background: #919093;
+<div style="border-radius: 15px;background: #181818;
     padding: 20px; width:700px; margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >
@@ -22,7 +22,7 @@
   </tr>
 </table>
 </div>
-<div style="border-radius: 15px;background:#919093;
+<div style="border-radius: 15px;background:#181818;
     padding: 20px; width:700px; margin-top: 20px;margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >
@@ -38,7 +38,7 @@
   </tr>
 </table>
 </div>
-<div style="border-radius: 15px;background: #919093;
+<div style="border-radius: 15px;background: #181818;
     padding: 20px; width:700px;margin-top: 20px;margin-left: 130px" align="center">
 <table style="color: white" >
   <tr >

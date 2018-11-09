@@ -5,8 +5,8 @@
 <p align="left"><a href="<?php echo site_url()?>/HomeUser">Beranda</a></p><br>
  <div class="row">
                     <!-- Column -->
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered" cellspacing="0" id="example" width="100%">
+                    <div class="table-responsive" style="margin: 15px;background: #181818;" >
+                        <table class="table table-striped" cellspacing="0" id="example" width="100%">
                             <thead>
                                 <tr>
                                     <td><b>Kode Booking</b></td>

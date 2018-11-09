@@ -3,8 +3,40 @@
 <div style="background:#202120; color: white; height: 241px; text-align: center; margin-left: -20px;min-height: 1000px"><br>
 <div class="container"> 
 <div class="title"> PROFIL</div><br>
-<div align="left">PENGATURAN PROFIL<hr color="green" width="200px" align="left"></div>
-<div align="left"> 
+
+<link rel="stylesheet" href="<?php echo base_url()?>assets/user/navtabs.css">
+
+<div class="w3-container">
+
+  <div class="w3-row">
+    <a href="javascript:void(0)" onclick="openCity(event, 'profil');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding active">Update Profil</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'password');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Update Password</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'saldo');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Balance</div>
+    </a>
+  </div>
+
+  <div id="profil" class="w3-container city" style="display:none">
+    
+    <Br><Br><div align="left" class="row"> 
+    
+
+<div class="col-md-3">
+ <img src="<?php echo base_url()?>assets/upload/<?php echo $daftarprofil[0]->foto?>" class="img-circle" width="150" />
+                             
+                                    <?php echo form_open_multipart('TabelProfil/updateFoto');?>
+                                    <div>
+                                    <input type="file" id="foto" name="foto"  />
+
+                                    </div><br>
+                                    <button type="submit" class="btn btn-primary">Ganti Foto</button>
+                                    <?php echo form_close();?> 
+</div>
+<div class="col-md-9"> 
     <?php echo form_open_multipart('ProfilUser/update'); ?>
                 <div class="form-group">
                 <label for="">ID </label>
@@ -35,24 +67,49 @@
                 <button type="submit" class="btn btn-primary" style="border-radius: 0px;font-size: 14px;">Update My Profil</button>
   <?php echo form_close(); ?>
             </div>
-
-
-
-
+  </div>
 </div>
-<div class="container">
-<div align="left">UBAH PASSWORD<hr color="green" width="200px" align="left"></div>
-<div align="left">
-  
- <div class="form-group">
+  <div id="password" class="w3-container city" style="display:none">
+    <div align="left">
+  <br>
+ <div class="form-group col-md-7">
   <?php echo form_open_multipart('ProfilUser/updatePass'); ?>
-                <label for="">Password BARU</label>
+              <label for="">Password Lama</label>
+                <input type="password" class="form-control" name="password1" value="" placeholder="password" style="border-radius: 0px; background-color: #161616;color: white" >
+              
+                <label for="">Password Baru</label>
                 <input type="password" class="form-control" name="password" value="" placeholder="password" style="border-radius: 0px; background-color: #161616;color: white" >
-                </div>
+                <br>
                 <button type="submit" class="btn btn-primary" style="border-radius: 0px;font-size: 14px;">Update Password</button>
   <?php echo form_close(); ?>
 </div>
 </div>
+</div>
+
+
+  <div id="Tokyo" class="w3-container city" style="display:none">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+</div>
+<br><br><br>
+ <?=$this->session->flashdata('notif2')?>
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-border-green", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-green";
+}
+</script>
+
 
  <div class="container">
    <script src="<?php echo base_url()?>assets/user/lib/jquery/jquery.min.js"></script>

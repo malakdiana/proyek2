@@ -61,18 +61,18 @@
                                     <div class="p-20">
                                    <div class="row">
                                     <div class="col-lg-4 col-xlg-3 col-md-5">
-                        <div class="card">
+                                <div class="card">
                             <div class="card-block">
                                    <?=$this->session->flashdata('notif')?>
                                 <center class="m-t-30">
-<?php foreach($daftarAdmin as $key ){?>
+                                        <?php foreach($daftarAdmin as $key ){?>
+
                                  <img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" class="img-circle" width="150" />
                  <?php };?>                
                                     <?php echo form_open_multipart('TabelProfil/updateFoto');?>
                                     <div>
                                     <input type="file" id="foto" name="foto" style="margin-left: 60px" />
-<!-- <button type="button" id="custom-button" style="background-image: url(<?php// echo base_url()?>/assets/images/background/camera.png); width: 40px; background-size: 40px;height: 40px;margin-top: -20px"></button>
-<span id="custom-text">No file chosen, yet.</span> -->
+
                                     </div><br>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <?php echo form_close();?>
@@ -143,13 +143,13 @@
                                 <div class="form-group">
                                         <label class="col-md-12">Password Lama</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="" value="" class="form-control form-control-line" name="passLama" id="passLama">
+                                            <input type="Password" placeholder="" value="" class="form-control form-control-line" name="passLama" id="passLama">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Password Baru</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="" value="" class="form-control form-control-line" name="passBaru" id="passBaru">
+                                            <input type="Password" placeholder="" value="" class="form-control form-control-line" name="passBaru" id="passBaru">
                                         </div>
 
                                     </div>

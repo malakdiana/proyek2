@@ -20,6 +20,10 @@ class TabelProfil extends CI_Controller {
     }
 
     public function updateFoto(){
+        $session_data=$this->session->userdata('logged_in');
+        $data['username'] = $session_data['username'];
+        $data['id'] = $session_data['id'];
+        $id= $session_data['id'];
     $this->load->model('ModelProfilUser');
       $config['upload_path'] = './assets/upload/';
       $config['allowed_types'] = 'gif|jpg|png';
@@ -34,14 +38,18 @@ $this->upload->initialize($config);
                 redirect('TabelProfil', 'refresh');
             }
             else{
-                $this->ModelProfilUser->updateFotoUser();
+                $this->ModelProfilUser->updateFotoUser($id);
                 $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Foto berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
                 redirect('TabelProfil', 'refresh');
             }
     }
     public function update(){
-        $this->load->model('ModelProfilUser');
-        $this->ModelProfilUser->updateData();
+        $this->load->model('ModelTabelAdmin');
+        $session_data=$this->session->userdata('logged_in');
+        $data['username'] = $session_data['username'];
+        $data['id'] = $session_data['id'];
+        $id= $session_data['id'];
+        $this->ModelTabelAdmin->updateAdmin($id);
                 //$data['daftarAdmin'] = $this->ModelTabelAdmin->getAllAdmin();
                 $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
                 redirect('TabelProfil', 'refresh');

@@ -25,11 +25,13 @@ class PesanTiketModel extends CI_Model {
          }
 	}
         public function getFilmById($film){
+          $tgl=date('Y-m-d');
         $this->db->select('*');
         $this->db->from('film');
         $this->db->join('jadwalfilm', 'film.noFilm = jadwalfilm.noFilm');
         $this->db->join('datastudio', 'jadwalfilm.idStudio = datastudio.idStudio');
          $this->db->where('film.noFilm', $film);
+         $this->db->where('tanggalTayang >=', $tgl);
          $query = $this->db->get();
         return $query->result();
         }
@@ -107,12 +109,13 @@ class PesanTiketModel extends CI_Model {
 
     }
     public function getorder($no){
-       $this->db->select('*');
+       $this->db->select('*, count(detailpembelian.noPembelian) as jumlah');
         $this->db->from('pembelian');
-         $this->db->where('noPembelian',$no);
+         $this->db->where('pembelian.noPembelian',$no);
            $this->db->join('jadwalfilm', 'jadwalfilm.idJadwal = pembelian.idJadwal');
         $this->db->join('film', 'jadwalfilm.noFilm = film.noFilm');
          $this->db->join('datastudio', 'jadwalfilm.idStudio = datastudio.idStudio');
+         $this->db->join('detailpembelian', 'detailpembelian.noPembelian = pembelian.noPembelian');
           $query = $this->db->get();
         return $query->result();
     }

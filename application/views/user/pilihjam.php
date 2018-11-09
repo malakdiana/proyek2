@@ -25,12 +25,12 @@
 hr{
   padding-top: -90px;
 }
-th,td{
-  width: 200px;
+td{
+  width: 400px;
   color: white;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid grey;
   height: 50px;
-  background-color: grey;
+  background-color: #363B42;
 }
 
 .title{
@@ -58,7 +58,19 @@ border:0px;
   .tombol:hover {
    background: grey;
    color: white;
-}
+ }
+   .tombol2{
+  width:  200px;
+  height: 50px;
+border:0px;
+    border-radius: 0;
+    color: white;
+    background:#363B42;
+    text-align: left}
+  .tombol2:hover {
+   background: green;
+   color: white;
+
 
 </style> 
 <!DOCTYPE html>
@@ -130,15 +142,15 @@ border:0px;
 <table> 
 
 <tr>
-  <th>Tanggal</th>
-  <th>Studio</th>
-  <th>Jam</th>
+  <th>TANGGAL</th>
+  <th>STUDIO</th>
+  <th>JAM</th>
 </tr>
 <?php foreach ($datafilm as $key){ ?>
 <tr>  
-    <td><?php  echo $key->tanggalTayang; ?></td>
+    <td>&nbsp;<?php  echo $key->tanggalTayang; ?></td>
     <td>STUDIO <?php echo $key->namaStudio;?></td>
-    <td><a href="<?php echo site_url()?>/ProfilUser/pilihkursi/<?php echo $key->idJadwal;?>"><button><?php   echo $key->jadwalTayang ?></button></a></td>
+    <td><a href="<?php echo site_url()?>/ProfilUser/pilihkursi/<?php echo $key->idJadwal;?>"><button class="btn tombol2"><?php   echo $key->jadwalTayang ?></button></a></td>
 </tr>
 <?php   } ?>
 </table>

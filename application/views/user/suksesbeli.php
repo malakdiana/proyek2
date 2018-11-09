@@ -22,13 +22,10 @@
 
 
 }
-hr{
-  padding-top: -90px;
-}
+
 th,td{
   width: 200px;
   color: white;
-  border-bottom: 1px solid white;
   height: 50px;
   
 }
@@ -113,19 +110,41 @@ border:0px;
 <div class="container">
 <div class="title">Pembelian Sukses</div><br>
 <p align="left"><a href="<?php echo site_url()?>/HomeUser">Beranda</a></p><br>
-  <?php $nama= $databeli[0]->noPembelian.'.png';  ?>
- <img style="width: 100px;" src="<?php echo base_url().'assets/images/'.$nama?>"></td>
-<table>
-  <tr>
-    <td>Kode Booking</td>
-    <td><?php echo $databeli[0]->noPembelian; ?></td>
-  </tr>
 
-  <tr>
-    <td>Sisa Saldo</td>
-    <td><?php echo $this->session->userdata('logged_in')['saldo'];; ?> </td>
-  </tr>
-</table>
+<div class="row" style="padding: 5px; background: #181818;margin:5px" >
+    <div class="col-md-2">
+         <img src="<?php echo base_url().'assets/upload/'.$databeli[0]->foto?>" alt="" width="150px" height="200px">
+    </div> 
+    <div class="col-md-9"> 
+        <p align="left">KODE BOOKING : <?php echo $databeli[0]->noPembelian; ?><br><font size="4px"><b><?php echo $databeli[0]->judulFilm; ?></b></font></p>
+        <hr style="margin-top: -30px; color: green;border: 0;border-top: 2px solid green;"">
+        <table width="600px" style="margin-top: -20px">
+          <tr>
+            <td>KODE BOOKING</td>
+            <td><?php echo $databeli[0]->noPembelian; ?></td>
+            <td>STUDIO</td>
+            <td>STUDIO <?php echo $databeli[0]->namaStudio; ?></td>
+          </tr>
+          <tr>
+            <td>TANGGAL</td>
+            <td><?php echo $databeli[0]->tanggalTayang; ?></td>
+            <td>JAM TAYANG</td>
+            <td><?php echo $databeli[0]->jadwalTayang; ?></td>
+          </tr>
+          <tr>
+            <td>JUMLAH KURSI</td>
+            <td><?php echo $databeli[0]->jumlah; ?></td>
+            <td>TOTAL HARGA</td>
+            <td><?php echo $databeli[0]->totalHarga; ?></td>
+          </tr>
+          
+          
+          
+        </table>
+    </div>
+</div>
+
+
    <script src="<?php echo base_url()?>assets/user/lib/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url()?>assets/user/lib/jquery/jquery-migrate.min.js"></script>
   <script src="<?php echo base_url()?>assets/user/lib/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -162,7 +162,7 @@
       position: relative;
       display: block;
       width: 100%;
-      height: 150px;
+      height: 170px;
       padding: 0px;
     }
     .event-list > li > time,
@@ -188,14 +188,14 @@
     }
     .event-list > li > time,
     .event-list > li > img {
-      width: 120px;
-      height: 150px;
+      width: 130px;
+      height: 170px;
       padding: 0px;
       margin: 0px;
     }
     .event-list > li > .info {
       position: relative;
-      height: 150px;
+      height: 170px;
       text-align: left;
       padding-right: 40px;
     } 

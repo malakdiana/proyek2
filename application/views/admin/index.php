@@ -156,7 +156,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                   
                                     <div class="col-lg-9">
                                     <?php foreach ($filmPersen as $key) {
-                               
                                     $kursi[] = $key->total1;
                                     $judul[]=$key->judulFilm;} ?>
                                     <canvas id="canvas" width="800" height="280"></canvas>
@@ -164,11 +163,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <!--Load chart js-->
     <script type="text/javascript" src="<?php echo base_url().'assets/chartjs/chart.min.js'?>"></script>
     <script>
-
             var lineChartData = {
                 labels : <?php echo json_encode($judul);?>,
-                datasets : [
-                    
+                datasets : [        
                     {
                         fillColor: "rgba(60,141,188,0.9)",
                         strokeColor: "rgba(60,141,188,0.8)",

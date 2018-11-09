@@ -4,14 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ModelProfilUser extends CI_Model {
 	public function update(){
-	
-       
         $id= $this->input->post('id');
         $level = "user";
         $object = array('username' => $this->input->post('username'),'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'),'level' => $level );
         $this->db->where('idUserAdmin', $id);
         $this->db->update('useradmin', $object);
 	}
+    public function updateFotoUser($id){
+
+        $object = array(
+            'foto' =>$this->upload->data('file_name')
+            );
+         $this->db->where('idUserAdmin', $id);
+        $this->db->update('useradmin', $object);
+    }
+
     public function updatePass(){
        $password= $this->input->post('password'); 
        $pass = md5($password);

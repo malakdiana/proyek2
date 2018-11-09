@@ -21,7 +21,7 @@ class ProfilUser extends CI_Controller {
     $this->load->model('ModelProfilUser');
     $this->ModelProfilUser->update();
            
-            $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            $this->session->set_flashdata('notif2','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('ProfilUser/profil', 'refresh');
   }
   public function updatePass(){
@@ -30,6 +30,31 @@ class ProfilUser extends CI_Controller {
            
             $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('ProfilUser/profil', 'refresh');
+  }
+
+  public function updateFoto(){
+    $session_data=$this->session->userdata('logged_in');
+        $data['username'] = $session_data['username'];
+        $data['id'] = $session_data['id'];
+        $id= $session_data['id'];
+     $this->load->model('ModelProfilUser');
+      $config['upload_path'] = './assets/upload/';
+      $config['allowed_types'] = 'gif|jpg|png';
+      $config['max_size']  = '1000';
+      $config['max_width']  = '1024';
+      $config['max_height']  = '1768';
+
+       $this->load->library('upload', $config);
+$this->upload->initialize($config);
+            if (! $this->upload->do_upload('foto')) {
+                $this->session->set_flashdata('notif2','<div class="alert alert-success" role="alert"> Foto Gagal diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                redirect('TabelProfil', 'refresh');
+            }
+            else{
+                $this->ModelProfilUser->updateFotoUser($id);
+                $this->session->set_flashdata('notif2','<div class="alert alert-success" role="alert"> Foto berhasil diperbarui <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                redirect('TabelProfil', 'refresh');
+            }
   }
   function autoId(){
   $query = $this->db->query('select idpembelian from pembelian order by idpembelian desc limit 1');
@@ -125,7 +150,6 @@ class ProfilUser extends CI_Controller {
 
       $this->PesanTiketModel->order($no,$saldoakhir);
       $data2['databeli']= $this->PesanTiketModel->getorder($no);
-
       $this->load->view('user/suksesbeli',$data2);
 
     }

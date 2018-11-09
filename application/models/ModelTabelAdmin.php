@@ -20,7 +20,7 @@ class ModelTabelAdmin extends CI_Model {
     {
         $this->db->where('idUserAdmin', $id);
         $query = $this->db->get('useradmin');
-        return $query->result_array();
+        return $query->result();
     }
 
     public function getAllAdmin2()
@@ -56,10 +56,10 @@ class ModelTabelAdmin extends CI_Model {
     }
     public function updateAdmin($id)
     {
-        $password= $this->input->post('password');
-		$md5=md5($password);
+        //$password= $this->input->post('password');
+		//$md5=md5($password);
 		$level = "admin";
-        $object = array('username' => $this->input->post('username'), 'password' => $md5,'level' => $level, 'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'), 'foto' => $this->upload->data('file_name'), 'saldo' => $this->input->post('saldo'),);
+        $object = array('username' => $this->input->post('username'),'level' => $level, 'nama' => $this->input->post('nama'), 'alamat' => $this->input->post('alamat'), 'telepon' => $this->input->post('telepon'), 'email' => $this->input->post('email'));
         $this->db->where('idUserAdmin', $id);
         $this->db->update('useradmin', $object);
     }

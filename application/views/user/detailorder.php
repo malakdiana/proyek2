@@ -141,8 +141,8 @@ foreach ($object as $key){ ?>
     <td colspan="5"> jumlah </td>
     <td><input type="text" name="jumlah" value="<?php echo $jumlah ?>"></td>
   </tr>
-  </table>
-  <input type="submit"><?php echo form_close(); ?>
+  </table><br>
+  <input type="submit" style="width: 150px" class="btn btn-success" value="KIRIM"><?php echo form_close(); ?>
    <script src="<?php echo base_url()?>assets/user/lib/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url()?>assets/user/lib/jquery/jquery-migrate.min.js"></script>
   <script src="<?php echo base_url()?>assets/user/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
