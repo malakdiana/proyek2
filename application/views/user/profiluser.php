@@ -4,6 +4,22 @@
 <div class="container"> 
 <div class="title"> PROFIL</div><br>
 
+<style>
+  .tombolmu:hover{
+    font-weight: underline;
+  }
+  .btn-blues{
+    background-color: #3e7bbc;
+    transition: all 0.5s ease;
+    border-radius: 0px;font-size: 14px;
+    color: white;
+  }
+  .btn-blues:hover{
+    background-color: grey;
+
+  }
+</style>
+
 <link rel="stylesheet" href="<?php echo base_url()?>assets/user/navtabs.css">
 
 <div class="w3-container">
@@ -64,7 +80,7 @@
                 <input type="text" class="form-control xx" name="email" value="<?php echo $daftarprofil[0]->email?>" placeholder="email" style="border-radius: 0px; background-color:#161616;color: white" >
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="border-radius: 0px;font-size: 14px;">Update My Profil</button>
+                <button type="submit" class="btn btn-blues">Update My Profil</button>
   <?php echo form_close(); ?>
             </div>
   </div>
@@ -80,7 +96,7 @@
                 <label for="">Password Baru</label>
                 <input type="password" class="form-control" name="password" value="" placeholder="password" style="border-radius: 0px; background-color: #161616;color: white" >
                 <br>
-                <button type="submit" class="btn btn-primary" style="border-radius: 0px;font-size: 14px;">Update Password</button>
+                <button type="submit" class="btn btn-blues" style="background-color: #3e7bbc; color: white; border-radius: 0px;font-size: 14px;">Update Password</button>
   <?php echo form_close(); ?>
 </div>
 </div>

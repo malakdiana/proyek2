@@ -2,7 +2,7 @@
 <div style="background:#202120; color: white; height: 241px; text-align: center; margin-left: -20px;min-height: 1000px"><br>
 <div class="container"> 
 <div class="title"> TAMBAH SALDO</div><br>
-<div align="left" style="background-color: green; font-size: 17px; padding: 10px; margin-bottom: 50px;">Pembayaran dapat dilakukan dengan transfer ke nomer rekening yang tertera dibawah ini, setelah melakukan proses transfer harap mengisi form konfirmasi.
+<div align="left" style="background-color: #3e7bbc; font-size: 17px; padding: 10px; margin-bottom: 50px;">Pembayaran dapat dilakukan dengan transfer ke nomer rekening yang tertera dibawah ini, setelah melakukan proses transfer harap mengisi form konfirmasi.
 </div>
 
   <?=$this->session->flashdata('notif')?>
@@ -57,7 +57,7 @@
 
 
 
-<div align="left" style="margin-top: 30px; margin-bottom: 20px">KONFIRMASI PENGISIAN SALDO<hr color="green" width="270px" align="left"></div>
+<div align="left" style="margin-top: 30px; margin-bottom: 20px">KONFIRMASI PENGISIAN SALDO<hr color="#3e7bbc" width="270px" align="left"></div>
 
 <div align="left"> 
     <?php echo form_open_multipart('ProfilUser/isisaldo'); ?>

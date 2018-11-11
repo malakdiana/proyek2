@@ -1,33 +1,48 @@
+
 <div class="col-md-9"> 
 <div style="background:#202120; color: white; height: 241px; text-align: center; margin-left: -20px;min-height: 1000px"><br>
 <div class="container">
-<div class="title">Daftar Pembelian</div><br>
-<p align="left"><a href="<?php echo site_url()?>/HomeUser">Beranda</a></p><br>
+<div class="title">DAFTAR PEMBELIAN</div><br>
+<style>
+  .tombolmu:hover{
+    font-weight: underline;
+  }
+  .btn-blues{
+    background-color: #3e7bbc;
+    transition: all 0.5s ease;
+    color: white;
+  }
+  .btn-blues:hover{
+    background-color: grey;
+
+  }
+</style>
+<p align="left"><a href="<?php echo site_url()?>/HomeUser" class="tombolmu"><i class="fa fa-arrow-left"></i> Beranda</a></p><br>
  <div class="row">
                     <!-- Column -->
-                    <div class="table-responsive" style="margin: 15px;background: #181818;" >
-                        <table class="table table-striped" cellspacing="0" id="example" width="100%">
+                    <div class="table-responsive" style="margin: 15px; color: white !important;" >
+                        <table class="table bg-dark text-white" cellspacing="0" id="example" width="100%">
                             <thead>
                                 <tr>
-                                    <td><b>Kode Booking</b></td>
-                                    <td><b>Tanggal</b></td>
-                                    <td><b>Judul Film</b></td>
-                                    <td><b>Studio</b></td>
+                                    <td class="text-center"><b>Kode Booking</b></td>
+                                    <td class="text-center"><b>Tanggal</b></td>
+                                    <td class="text-center"><b>Judul Film</b></td>
+                                    <td class="text-center"><b>Studio</b></td>
                                      
-                                    <td><b>Total </b></td>
-                                    <td><b>Tiket</b></td>
+                                    <td class="text-center"><b>Total </b></td>
+                                    <td class="text-center"><b>Tiket</b></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 
                                 <?php foreach ($datapembelian as $key ) { ?>
-                                    <tr>
-                                        <td><?php echo $key->noPembelian ?></td>
-                                        <td><?php echo $key->tanggalPesan ?></td>
-                                        <td><?php echo $key->judulFilm ?></td>
-                                        <td><?php echo $key->namaStudio ?></td>
-                                        <td><?php echo $key->totalHarga?></td>
-                                      <td><a href="<?php echo base_url()?>index.php/ProfilUser/createPdf/<?php echo $key->noPembelian?>"><button class="btn btn-success">Download Tiket</button></a></td>
+                                    <tr class="bg-dark">
+                                        <td class="text-center"><?php echo $key->noPembelian ?></td>
+                                        <td class="text-center"><?php echo $key->tanggalPesan ?></td>
+                                        <td class="text-center"><?php echo $key->judulFilm ?></td>
+                                        <td class="text-center"><?php echo $key->namaStudio ?></td>
+                                        <td class="text-center"><?php echo $key->totalHarga?></td>
+                                      <td class="text-center"><a href="<?php echo base_url()?>index.php/ProfilUser/createPdf/<?php echo $key->noPembelian?>"><button class="btn btn-blues" style="">Download Tiket</button></a></td>
                                         
                                     
                   
@@ -58,6 +73,7 @@
         <script src="<?php echo base_url();?>assets/datatables/jquery-2.2.4.min.js"></script>
         <script src="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.js"></script>      
         <link rel="stylesheet" href="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.css">
+       
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#example').DataTable();

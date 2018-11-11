@@ -3,8 +3,7 @@
  @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 .nama{
-  font-size: 12px;
-  padding-left: 20px;
+  font-size: 15px;
 
 }
 .form-group{
@@ -19,7 +18,7 @@
    border-right: 1px solid white;
    border-bottom: 1px solid white; 
    margin-left: 13px; margin-right: 11px;
-
+  padding: 10px 12px;
 
 }
 
@@ -32,19 +31,22 @@
 }
 .ket{
    margin-left: 13px; margin-right: 11px;
-   background-color: green;
+   padding: 0 12px;
+   background-color: #3e7bbc;
    font-size: 12px; padding-top: 10px;padding-bottom: 10px;
 
 
 }
  .tombol{
-  width:  200px;
+  width:  100%;
   height: 50px;
 border:0px;
     border-radius: 0;
     color: white;
     background:black;
-    text-align: left}
+    text-align: left;
+    transition: all 0.5s ease;
+  }
   .tombol:hover {
    background: grey;
    color: white;
@@ -89,21 +91,27 @@ border:0px;
   ======================================================= -->
 </head>
 <body style="overflow-y:auto;">
-<div style="background: url(<?php echo base_url()?>assets/user/img/call-to-action-bg.jpg); padding-left: 90px;  height: auto;top: 0; left: 0; overflow-y:auto; min-height: 1000px; overflow-x: hidden;">
+<div style="background: url(<?php echo base_url()?>assets/user/img/bgproyek.jpg); padding-left: 90px;  height: auto;top: 0; left: 0; overflow-y:auto; min-height: 1000px; overflow-x: hidden; background-size: cover;">
 <div class="row">
 <div class="col-md-2"> 
 <div style="background: black; color: white; height: 241px; text-align: left; min-height: 1000px; margin-right: -10px;">
-    <img src="<?php echo base_url()?>assets/upload/<?php echo $this->session->userdata('logged_in')['foto'] ?>" alt="" width="100px" height="130px" style="margin-left: 50px;margin-top: 20px"><br><br>
-    <div align="center" class="nama"> <?php echo $this->session->userdata('logged_in')['username'] ?></div><br>
+  <img src="<?php echo base_url("assets/user/img/logoproyek.png") ?>" alt="" style="width: 100%">
+    <img src="<?php echo base_url()?>assets/upload/<?php echo $this->session->userdata('logged_in')['foto'] ?>" alt="" style="width: 50%;margin: 0 25%; margin-top: 5%" class="rounded-circle"><br><br>
+    <div align="center" class="nama">
+      <?php echo $this->session->userdata('logged_in')['username'] ?>
+      <p class="text-muted"><?php echo $this->session->userdata('logged_in')['email'] ?></p>
+    </div>
+
     <div class="saldo">SALDO&nbsp;&nbsp;&nbsp;: Rp &nbsp;<?php echo $this->session->userdata('logged_in')['saldo'] ?></div><br>
     <div class="ket" align="center">HARAP ISI BALANCE/SALDO ANDA. PENGISIAN DAPAT DILAKUKAN DI SEMUA CABANG INI CINEMA </div><br>
-   <hr color="green"  style="margin-bottom:1px">
-    <a href="<?php echo site_url()?>/profiluser/profil"><button class="tombol">&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Profil </button> <hr color="green"  style="margin-bottom:1px;margin-top: 1px"></a>
+   <hr color="#3e7bbc"  style="margin-bottom:1px">
+    <a href="<?php echo site_url()?>/profiluser/profil"><button class="tombol">&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Profil </button> <hr color="#3e7bbc" style="margin-bottom:1px;margin-top: 1px"></a>
     <a href="<?php echo site_url()?>/profiluser/pesan">
-    <button class="tombol">&nbsp;&nbsp;<i class="fa fa-play"></i>&nbsp;&nbsp;&nbsp;Pesan Tiket</button><hr color="green"  style="margin-bottom:1px;margin-top: 1px"></a>
-   <a href="<?php echo site_url()?>/profiluser/daftarPembelian">  <button class="tombol">&nbsp;&nbsp;<i class="fa fa-table"></i>&nbsp;&nbsp;&nbsp;Daftar Pesanan</button></a><hr color="green" style="margin-bottom:1px;margin-top: 1px">
-   <a href="<?php echo site_url()?>/profiluser/tambahsaldo">  <button class="tombol">&nbsp;&nbsp;<i class="fa fa-table"></i>&nbsp;&nbsp;&nbsp;Tambah Saldo</button></a><hr color="green" style="margin-bottom:1px;margin-top: 1px">
-    <a href="<?php echo site_url()?>/login/logout"><button class="tombol">&nbsp;&nbsp;<i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Keluar</button></a><hr color="green"  style="margin-bottom:1px;margin-top: 1px">
+    <button class="tombol">&nbsp;&nbsp;<i class="fa fa-play"></i>&nbsp;&nbsp;&nbsp;Pesan Tiket</button><hr color="#3e7bbc"  style="margin-bottom:1px;margin-top: 1px"></a>
+   <a href="<?php echo site_url()?>/profiluser/daftarPembelian">  <button class="tombol">&nbsp;&nbsp;<i class="fa fa-table"></i>&nbsp;&nbsp;&nbsp;Daftar Pembelian</button></a><hr color="#3e7bbc" style="margin-bottom:1px;margin-top: 1px">
+   <a href="<?php echo site_url()?>/profiluser/tambahsaldo">  <button class="tombol">&nbsp;&nbsp;<i class="fa fa-table"></i>&nbsp;&nbsp;&nbsp;Tambah Saldo</button></a><hr color="#3e7bbc" style="margin-bottom:1px;margin-top: 1px">
+   <a href="<?php echo site_url()?>/profiluser/Bantuan"><button class="tombol">&nbsp;&nbsp;<i class="fa fa-question-circle"></i>&nbsp;&nbsp;&nbsp;Bantuan</button></a><hr color="#3e7bbc"  style="margin-bottom:1px;margin-top: 1px">
+    <a href="<?php echo site_url()?>/login/logout"><button class="tombol">&nbsp;&nbsp;<i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Keluar</button></a><hr color="#3e7bbc"  style="margin-bottom:1px;margin-top: 1px">
 
 
 </div></div>

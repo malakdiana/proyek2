@@ -96,11 +96,11 @@ $this->upload->initialize($config);
 
 	public function profil()
 	{
-		$this->load->model('ModelTabelAdmin');
-        $session_data=$this->session->userdata('logged_in');
-         $data['daftarprofil'] = $this->ModelTabelAdmin->getDataAdmin($session_data['id']);	
-         $this->load->view('user/header');
-		$this->load->view('user/profiluser',$data);
+		  $this->load->model('ModelTabelAdmin');
+      $session_data=$this->session->userdata('logged_in');
+      $data['daftarprofil'] = $this->ModelTabelAdmin->getDataAdmin($session_data['id']);	
+      $this->load->view('user/header');
+		  $this->load->view('user/profiluser',$data);
 	}
   public function pesan(){
     $this->load->model('PesanTiketModel');
@@ -216,6 +216,11 @@ public function createPdf($id){
   $this->pdf->load_view('report/ticket',$data);
 }
 
+public function bantuan()
+{
+  $this->load->view('user/header');
+  $this->load->view('user/bantuan');
+}
 }
 
 /* End of file  .php */

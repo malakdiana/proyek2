@@ -269,7 +269,7 @@
 </head>
 
 <body>
-<div style="background: url(<?php echo base_url()?>assets/user/img/call-to-action-bg.jpg); padding: 90px;  min-height: 100%;
+<div style="background: url(<?php echo base_url()?>assets/user/img/bgproyek.jpg);background-size: cover; padding: 90px;  min-height: 100%;
         min-width: 1024px;
  
         /* scale secara proporsional */
@@ -320,7 +320,7 @@
  <div class="row"> 
 
   <div class="dropdown">
-  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pilih Tanggal
+  <button class="btn dropdown-toggle" style="background-color: #3e7bbc;color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pilih Tanggal
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
   <?php $tgl= date("Y-m-d") ; 

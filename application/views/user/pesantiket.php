@@ -2,7 +2,7 @@
 <div style="background:#181818; color: white; height: 241px; text-align: center; margin-left: -20px;min-height: 1000px"><br>
 <div class="container"> 
 <div class="title"> JUDUL FILM TERSEDIA</div><br>
-<div align="left" style="background-color: green;padding-left: 20px; padding-top: 10px; padding-bottom: 10px">Pilihan Film Tersedia Untuk Di-booking Hari ini: <?php echo date('d-m-Y');?>.  Semua Jam yang ditunjukan dalam website ini menggunakan WIB (Waktu Indonesia Barat)</div><br><br>
+<div align="left" style="background-color: #3e7bbc ;padding-left: 20px; padding-top: 10px; padding-bottom: 10px">Pilihan Film Tersedia Untuk Di-booking Hari ini: <?php echo date('d-m-Y');?>.  Semua Jam yang ditunjukan dalam website ini menggunakan WIB (Waktu Indonesia Barat)</div><br><br>
 <div align="left" class="row" style="margin-left: 3px">
 <?=$this->session->flashdata('notif')?>
 <?php foreach ($datafilm as $key){ ?>
