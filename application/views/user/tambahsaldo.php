@@ -54,6 +54,22 @@
   </tr>
 </table>
 </div>
+<div style="border-radius: 15px;background: #181818;
+    padding: 20px; width:700px;margin-top: 20px;margin-left: 130px" align="center">
+<table style="color: white" >
+  <tr >
+      <td width="200px" >
+        <img src="<?php echo base_url()?>assets/images/mandiri.png" width="100px">  
+      </td>
+      <td width="300px">
+          Nomer Rekening <br> Nama Pemilik Rekening 
+      </td>
+      <td width="250px">
+         9500456789 <br> Jihan Octavia Zaini
+      </td>
+  </tr>
+</table>
+</div>
 
 
 
