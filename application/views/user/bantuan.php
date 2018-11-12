@@ -34,20 +34,20 @@
                 <div class="card-body">
                   <ul>
                     <li>Untuk saat ini pengisian saldo reguler hanya bisa dilakukan secara offline. 
-                    <li>Pengisian dengan cara TRANSFER ANTAR BANK masih dalam tahap negosiasi dan akan segera hadir ke MOVIMAX CINEMA
-                    <li>Dengan cara mengunjungi cabang movimax terdekat.
-                    <li>Pengisian saldo dapat dilakukan di kasir di seluruh movimax cinema 
+                    <li>Pengisian dengan cara TRANSFER ANTAR BANK masih dalam tahap negosiasi dan akan segera hadir ke INICINEMA
+                    <li>Dengan cara mengunjungi cabang INICINEMA terdekat.
+                    <li>Pengisian saldo dapat dilakukan di kasir di INICINEMA 
                     <li>Harap pastikan email dan nomor telepon Anda sebelum melakukan topup,Anda akan menerima bukti topup dari kasir kami.</li>
                   </ul>
                   <ol>
                     <li>
-                      Harap mengunjungi cabang movimax dimana Anda akan menonton
+                      Harap mengunjungi INICINEMA dimana Anda akan menonton
                     </li>
                     <li>
                       Lalu datang pada kasir untuk melakukan topup</li>
                     </li>
                     <li>
-                      Jika topup selesai maka cek saldo dengan cara log in ke akun Anda yang sudah terdaftar di movimax
+                      Jika topup selesai maka cek saldo dengan cara log in ke akun Anda yang sudah terdaftar di INICINEMA
                     </li>
                     <li>
                       Jika saldo sudah terisi maka Anda dapat menggunakannya untuk melakukan pembelian tiket</li>
@@ -67,9 +67,9 @@
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                   <ol>
-                  <li>Harap mengunjungi cabang movimax dimana Anda akan menonton,anda dapat datang kapanpun sebelum jam pertunjukkan dimulai. Anda dapat mengetahui lokasi Anda akan menonton dari daftar transaksi </li>
+                  <li>Harap mengunjungi INICINEMA dimana Anda akan menonton,anda dapat datang kapanpun sebelum jam pertunjukkan dimulai. Anda dapat mengetahui lokasi Anda akan menonton dari daftar pembelian </li>
                   </li>
-                  <li>Cari mesin e-ticket yang sudah disiapkan,tanyakan kepada pihak security movimax apabila Anda mengalami kesulitan </li>
+                  <li>Cari mesin e-ticket yang sudah disiapkan,tanyakan kepada pihak security INICINEMA apabila Anda mengalami kesulitan </li>
                   <li>Masukkan kode booking dan nomer telepon Anda yang terdaftar dengan akun Anda</li>
                   <li>Lalu klik next untuk melakukan pencetakan </li>
                   </ol>
@@ -86,7 +86,18 @@
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  <ol>
+                    <li>Jika Anda mendaftar menggunakan akun Gmail(xxx@gmail.com) maka kemungkinan besar Anda dapat masuk menggunakan SIGN IN WITH GOOGLE</li>
+                    <li>Jika Anda pengguna akun email lain atau akun gmail Anda tidak dapat masuk melalui SIGN IN WITH GOOGLE, maka masukkan email dan password Anda di kolom yang sudah disediakan pada halaman ORDER</li>
+                    <li>Jika Anda masih tidak dapat masuk, gunakan nomor telepon dan password yang terdaftar pada INICINEMA</li>
+                    <li>Jika lupa password gunakan menu LUPA PASSWORD pada menu ORDER, masukkan nomor telepon dan email Anda</li>
+                    </ol>
+
+                  <ol>
+                    PERINGATAN : RESET PASSWORD
+                    <li>Reset password akan mengirimkan password Anda yang baru melalui email dan sms.dalam kondisi apapun,HARAP TIDAK MEMBERIKAN PASSWORD ANDA KEPADA SIAPAPUN</li>
+                    <li>Apabila Anda menerima sms maupun email berisikan password Anda,namun Anda merasa tidak pernah meminta pernggantian password,harap segera log in ke akun INICINEMA Anda menggunakan password tersebut dan gantilah password Anda melalui menu PROFIL</li>
+                  </ol>
                 </div>
               </div>
             </div>

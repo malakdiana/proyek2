@@ -12,9 +12,9 @@ class ProfilUser extends CI_Controller {
   }
   public function pilihjam($film){
     $this->load->model('PesanTiketModel');
-
     $data['datafilm']=$this->PesanTiketModel->getFilmById($film);
     $data['film']=$this->PesanTiketModel->film($film);
+     $this->load->view('user/header');
     $this->load->view('user/pilihjam',$data);
   }
   public function update(){
@@ -76,7 +76,9 @@ $this->upload->initialize($config);
     $this->load->model('PesanTiketModel');
     $data['datafilm']=$this->PesanTiketModel->getFilmByIdJadwal($id); 
     $data['datakursi']=$this->PesanTiketModel->cekKursi($id); 
+    $this->load->view('user/header');
     $this->load->view('user/pilihkursi',$data);
+
   }
   public function pilihkursi2($id){
     $no = $this->input->post('id');
@@ -91,6 +93,7 @@ $this->upload->initialize($config);
       }
     };
 
+    $this->load->view('user/header');
     $this->load->view('user/detailorder', $data);
   }
 
@@ -155,6 +158,7 @@ $this->upload->initialize($config);
 
       $this->PesanTiketModel->order($no,$saldoakhir);
       $data2['databeli']= $this->PesanTiketModel->getorder($no);
+      $this->load->view('user/header');
       $this->load->view('user/suksesbeli',$data2);
 
     }

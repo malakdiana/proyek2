@@ -11,7 +11,7 @@
 <img src="<?php echo base_url()?>assets/upload/<?php  echo $key->foto;?>" alt="" width="157" height="200" style="margin-left: -14px"><br>
 <div style="font-size: 16px; height: 40px"><b> <?php  echo $key->judulFilm; ?></b></div><br>
 <div style="font-size: 11px">  <?php  echo $key->durasi; ?> min <br>  <?php  echo $key->genre; ?><br> Now Playing </div><br>
-<a href="<?php echo site_url()?>/profiluser/pilihjam/<?php  echo $key->noFilm;?>"><button class="btn btn-success" style="border-radius: 0px; width:140px; margin-left: -7px; height:30px; margin-bottom: 3px; font-size: 12px">PESAN SEKARANG</button></a>
+<a href="<?php echo site_url()?>/profiluser/pilihjam/<?php  echo $key->noFilm;?>"><button class="btn" style="background-color: #3e7bbc ;border-radius: 0px; color:white; width:140px; margin-left: -7px; height:30px; margin-bottom: 3px; font-size: 12px">PESAN SEKARANG</button></a>
 
   
 </div>  

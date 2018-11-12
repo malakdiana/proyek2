@@ -86,14 +86,15 @@ class PesanTiketModel extends CI_Model {
         $this->db->update('useradmin', $object3);
 
 
-        $this->load->library('session');
+    $this->load->library('session');
     $id =  $this->session->userdata('logged_in')['id'];
     $username =  $this->session->userdata('logged_in')['username'];
     $foto =  $this->session->userdata('logged_in')['foto'];
     $level = $this->session->userdata('logged_in')['level'];
+     $email = $this->session->userdata('logged_in')['email'];
     $this->session->unset_userdata('logged_in');
     $sess_array = array('saldo' => $saldo,'id' =>$id,'username'=>$username,
-          'level'=>$level , 'foto' =>$foto ,);
+          'level'=>$level , 'foto' =>$foto , 'email'=>$email);
     $this->session->set_userdata('logged_in',$sess_array);
 
 
