@@ -30,7 +30,7 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('<?php echo base_url();?>assets/login/images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('<?php echo base_url();?>assets/user/img/call-to-action-bg.jpg');">
 			<div class="wrap-login100">
 
 					<span class="login100-form-title p-b-34 p-t-27">
