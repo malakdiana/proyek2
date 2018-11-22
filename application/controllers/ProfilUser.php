@@ -225,6 +225,42 @@ public function bantuan()
   $this->load->view('user/header');
   $this->load->view('user/bantuan');
 }
+
+
+public function cancel(){
+
+    $this->load->model('PesanTiketModel');
+   $uang = $this->input->post('uang');
+
+  $idpembelian = $this->input->post('idpembelian');
+
+
+date_default_timezone_set('Asia/Jakarta');
+  $tgl = date("Y-m-d");
+  $tanggalTayang = $this->input->post('tanggal');
+  $jamtayang = $this->input->post('jam');
+  $tayang1 = $tanggalTayang." ".$jamtayang;
+  $tayang=date_create($tayang1);
+  $now = date_create();
+  $diff=date_diff($tayang,$now);
+  
+if(($diff->h)>2){
+
+    $this->PesanTiketModel->canceltiket();
+    $this->session->set_flashdata('notif3','<div class="alert alert-success" role="alert">Sukses Cancel  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            redirect('ProfilUser/daftarPembelian', 'refresh');
+ 
+  
+}else{
+
+    $this->session->set_flashdata('notif3','<div class="alert alert-success" role="alert">Maksimal Cancel 2 jam sebelum tayang <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            redirect('ProfilUser/daftarPembelian', 'refresh');
+
+}
+
+
+}
+
 }
 
 /* End of file  .php */

@@ -82,8 +82,8 @@ class PesanTiketModel extends CI_Model {
         }
     }
     $this->db->where('idUserAdmin',$this->session->userdata('logged_in')['id'] );
-     $object3 = array('saldo' => $saldo);
-        $this->db->update('useradmin', $object3);
+    $object3 = array('saldo' => $saldo);
+    $this->db->update('useradmin', $object3);
 
 
     $this->load->library('session');
@@ -138,6 +138,32 @@ class PesanTiketModel extends CI_Model {
         $this->db->where('noPembelian',$no);
         $query = $this->db->get();
         return $query->result();
+      }
+
+      public function canceltiket(){
+    $tanggalTayang = $this->input->post('tanggal');
+     $idpembelian = $this->input->post('idpembelian');
+    $jamtayang = $this->input->post('jam');
+    $uang = $this->input->post('uang');
+    $saldo= $this->session->userdata('logged_in')['saldo'];
+    $saldo=$saldo+$uang;
+    $this->db->where('idUserAdmin',$this->session->userdata('logged_in')['id'] );
+    $object3 = array('saldo' => $saldo);
+    $this->db->update('useradmin', $object3);
+    $this->load->library('session');
+    $id =  $this->session->userdata('logged_in')['id'];
+    $username =  $this->session->userdata('logged_in')['username'];
+    $foto =  $this->session->userdata('logged_in')['foto'];
+    $level = $this->session->userdata('logged_in')['level'];
+     $email = $this->session->userdata('logged_in')['email'];
+    $this->session->unset_userdata('logged_in');
+    $sess_array = array('saldo' => $saldo,'id' =>$id,'username'=>$username,
+    'level'=>$level , 'foto' =>$foto , 'email'=>$email);
+    $this->session->set_userdata('logged_in',$sess_array);
+    $this->db->where('noPembelian', $idpembelian);
+        $this->db->delete('pembelian');
+        $this->db->where('noPembelian', $idpembelian);
+        $this->db->delete('detailpembelian');
       }
 
 

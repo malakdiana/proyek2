@@ -43,8 +43,8 @@ class TabelSaldo extends CI_Controller {
 
 public function konfirmasi(){
 	ini_set( 'sendmail_from', "pesaninicinema@gmail.com" ); 
-ini_set( 'SMTP', "mail.gmail.com" );  
-ini_set( 'smtp_port', 465 );
+  ini_set( 'SMTP', "mail.gmail.com" );  
+  ini_set( 'smtp_port', 465 );
  $config = [
                'useragent' => 'CodeIgniter',
                'protocol'  => 'smtp',
@@ -65,26 +65,20 @@ ini_set( 'smtp_port', 465 );
            ];
            // Load library email dan konfigurasinya
         $this->load->library('email', $config);
- 
         // Email dan nama pengirim
         $this->email->from('pesaninicinema@gmail.com', 'Ini Cinema');
         $mail=$this->input->post('email');
         // Email penerima
         $this->email->to("$mail"); // Ganti dengan email tujuan Anda
- 
- 
         // Subject email
         $this->email->subject('Konfirmasi Pengisian Saldo | IniCinema.com');
- 
         // Isi email
         $this->email->message("Pengisian Saldo anda berhasil. Nikmati kemudahan pembelian tiket online di IniCinema ");
- 
         // Tampilkan pesan sukses atau error
         if ($this->email->send()) {
            $this->load->model('ModelSaldo');
 		$this->ModelSaldo->konfirmasi();
 		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-
         redirect('TabelSaldo/', 'refresh');
         } else {
             echo 'Error! email tidak dapat dikirim.';

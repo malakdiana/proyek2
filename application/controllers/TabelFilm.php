@@ -72,32 +72,32 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
          $this->load->view('admin/header',$data);
         $this->load->view('admin/tabelFilm',$data);
     }
-    public function updateFilm($id)
+    public function updateFilm()
     {
         // $this->load->model('BioskopModel');
         // $id = $this->input->post('noFilm'); 
         // $this->BioskopModel->update($id);
 
         
-        $this->load->helper('url', 'form');
-        $this->load->library('form_validation');
-        $this->load->model('BioskopModel');
+//         $this->load->helper('url', 'form');
+//         $this->load->library('form_validation');
+//         $this->load->model('BioskopModel');
         
-        $this->form_validation->set_rules('judulFilm', 'judulFilm', 'trim|required|min_length[5]|max_length[100]');
-        $this->form_validation->set_rules('deskripsiFilm', 'deskripsiFilm', 'trim|required|min_length[1]');
+//         $this->form_validation->set_rules('judulFilm', 'judulFilm', 'trim|required|min_length[5]|max_length[100]');
+//         $this->form_validation->set_rules('deskripsiFilm', 'deskripsiFilm', 'trim|required|min_length[1]');
 
-        $data['daftarFilm']=$this->BioskopModel->getDataFilm($id);
+//         $data['daftarFilm']=$this->BioskopModel->getDataFilm($id);
 
-        if ($this->form_validation->run() == FALSE) {
-            $session_data=$this->session->userdata('logged_in');
-        $data['username']=$session_data['username'];
-        $data['id'] = $session_data['id'];
-        $id= $session_data['id'];
-        $this->load->model('ModelTabelAdmin');
-$data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
-         $this->load->view('admin/header',$data);
-            $this->load->view('edit_film_view', $data);
-        } else {
+//         if ($this->form_validation->run() == FALSE) {
+//             $session_data=$this->session->userdata('logged_in');
+//         $data['username']=$session_data['username'];
+//         $data['id'] = $session_data['id'];
+//         $id= $session_data['id'];
+//         $this->load->model('ModelTabelAdmin');
+// $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
+//          $this->load->view('admin/header',$data);
+//             $this->load->view('edit_film_view', $data);
+//         } else {
             $config['upload_path'] = './assets/upload/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size']  = '10000000';
@@ -112,7 +112,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
                 //$data['daftarFilm'] = $this->BioskopModel->getFilm();
                 //$this->load->view('header');
                 //$this->load->view('edit_film_view', $data);  
-                 $this->BioskopModel->updateFilm2($id);
+                 $this->BioskopModel->updateFilm2();
 
                 echo '<script>alert("sukses edit film")</script>';
 
@@ -122,7 +122,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
             else
             {
 
-                $this->BioskopModel->updateFilm($id);
+                $this->BioskopModel->updateFilm();
 
                 echo '<script>alert("sukses edit film")</script>';
 
@@ -130,7 +130,7 @@ $data['foto'] = $this->ModelTabelAdmin->getDataProfil($id);
 
             }
             
-        }        
+            
     }
 
     public function createFilm()
