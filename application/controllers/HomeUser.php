@@ -8,6 +8,7 @@ class HomeUser extends CI_Controller {
 			$this->load->model('BioskopModel');
 			$data['comingsoon'] = $this->BioskopModel->getcomingsoon();
 			$data['nowplaying'] = $this->BioskopModel->getnowplaying();
+			$data['sampul']= $this->BioskopModel->getFilm();
 		$this->load->view('user/index', $data);
 	}
 

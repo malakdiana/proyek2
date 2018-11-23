@@ -5,14 +5,52 @@
     body {
     background-color: rgb(220, 220, 220);
   }
+  .styled-select {
+  width: 200px;
+  height: 34px;
+  overflow: hidden;
+  background: no-repeat right #749ABE;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  transition:ease all 0.3s;
+  -webkit-transition:ease all 0.3s;
+  
+}
+.styled-select:hover{
+  box-shadow:0 0 7px 5px lightblue;
+}
+.styled-select select {
+  background: transparent;
+  width: 220px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+.styled-select select {
+  color: #fff;
+}
 
     .dropdown-toggle,
     .dropdown-menu {
+       width: 200px;
+  overflow: hidden;
+  background: no-repeat right #749ABE;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  transition:ease all 0.3s;
+  -webkit-transition:ease all 0.3s;
+  
         border-radius: 0px !important;
     }
     .dropdown-item:hover {
-        color: white;
-        background-color: #dc3545;
+          box-shadow:0 0 7px 5px lightblue;
     }
     .btn-success {
         width: 118%;
@@ -299,7 +337,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="<?php echo site_url()?>/HomeUser">Home</a></li>
+          <li class="menu"><a href="<?php echo site_url()?>/HomeUser">Home</a></li>
           <li><a href="<?php echo site_url()?>/jadwal">Schedule</a></li>
           <li><a href="<?php echo site_url()?>/ProfilUser/pesan">Order</a></li>
         <?php   if($this->session->userdata('logged_in')) { ?>
@@ -319,15 +357,18 @@
  <div class="container">
  <div class="row"> 
 
+
+
   <div class="dropdown">
-  <button class="btn dropdown-toggle" style="background-color: #3e7bbc;color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pilih Tanggal
+  <button class="btn dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pilih Tanggal
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
   <?php $tgl= date("Y-m-d") ; 
     for($i=0;$i<=4;$i++){
-      $tgl2 = date('Y-m-d', strtotime("+$i days", strtotime($tgl)));
+      $tgl2 = date('l Y-m-d', strtotime("+$i days", strtotime($tgl)));
+      $tgl3 = date('Y-m-d', strtotime("+$i days", strtotime($tgl)));
   ?> 
-    <li > <a class="dropdown-item" href="<?php echo site_url()?>/jadwal/index/<?php echo $tgl2;?>"><?php echo "$tgl2";?></a></li>
+    <li> <a class="dropdown-item" href="<?php echo site_url()?>/jadwal/index/<?php echo $tgl3;?>"><?php echo "$tgl2";?></a></li>
      <?php } ?>
   </ul>
 </div>

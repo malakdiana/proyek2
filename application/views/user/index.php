@@ -45,13 +45,12 @@
 
       <div id="logo" class="pull-left">
         <h1><a href="#intro" class="scrollto">IniCinema</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li class="menu"><a href="#intro">Home</a></li>
           <li><a href="<?php echo site_url()?>/jadwal">Schedule</a></li>
           <li><a href="<?php echo site_url()?>/ProfilUser/pesan">Order</a></li>
         <?php   if($this->session->userdata('logged_in')) { ?>
@@ -90,19 +89,19 @@
               </div>
             </div>
           </div>
-
+<?php  foreach ($sampul as $key ) { ?>
           <div class="carousel-item">
-            <div class="carousel-background"><img src="<?php echo base_url()?>assets/user/img/2.jpg" alt=""></div>
+            <div class="carousel-background"><img src="<?php echo base_url()?>assets/upload/<?php echo $key->foto?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <br><br><br><br><br><br>
-                <p><font size="5">Drama | Action</font></p>
-                <h2>Avengers : Infinity War</h2>
+                <p><font size="5"><?php   echo $key->genre ?></font></p>
+                <h2><?php   echo $key->judulFilm ?></h2>
               </div>
             </div>
           </div>
 
-
+<?php   } ?>
 
         </div>
 

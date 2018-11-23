@@ -31,7 +31,7 @@
                 <!-- ============================================================== -->
                  
                 <div class="row el-element-overlay">
-                <?php foreach ($daftarFilm as $key ) {?>
+                <?php foreach ($daftarFilm as $key) {?>
                 <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="el-card-item">
@@ -45,10 +45,7 @@
                                 </div>
                                 <div class="el-card-content">
                                     <h4 class="m-b-0"><?php echo $key->judulFilm ?></h4> <p class="text-muted">
-                                    <a href="javascript:void(0);" onclick="showmodal('<?php echo $key->noFilm ?>','<?php echo $key->judulFilm ?>','<?php echo $key->deskripsiFilm ?>','<?php echo $key->foto ?>','<?php echo $key->pemain ?>','<?php echo $key->sutradara ?>','<?php echo $key->produser?>','<?php echo $key->releaseDate ?>','<?php echo $key->durasi ?>','<?php echo $key->genre?>')" 
-                                                   
-                                                    data-toggle="modal" 
-                                                    data-target="#myModalEdit"><button type="button" class="btn btn-outline-primary">Update</button></a></p>
+                                    <a href="javascript:void(0);" onclick="showmodal('<?php echo $key->noFilm ?>','<?php echo $key->judulFilm ?>','<?php echo $key->deskripsiFilm ?>','<?php echo $key->pemain ?>','<?php echo $key->sutradara ?>','<?php echo $key->produser?>','<?php echo $key->releaseDate ?>','<?php echo $key->durasi ?>','<?php echo $key->genre?>')" data-toggle="modal" data-target="#myModalEdit"><button class="btn btn-outline-primary">Update</button></a></p>
                                 </div>
                             </div>
                         </div>
@@ -210,12 +207,10 @@
      <script src="<?php echo base_url()?>/assets/admin/libs/jquery/dist/jquery.min.js"></script>
 
      <script type="text/javascript">
-    function showmodal(id,judul,deskripsi,foto,pemain,sutradara,produser,date,durasi,genre){
-        //console.log(id+'='+judul+'='+deskripsi+'='+foto+'='+pemain+'='+sutradara+'='+produser+'='+date+'='+durasi+'='+genre);
+    function showmodal(id,judul,deskripsi,pemain,sutradara,produser,date,durasi,genre){
         document.getElementById('idFilm').value = id;
         document.getElementById('judul').value = judul;
         document.getElementById('deskripsi').value = deskripsi;
-        document.getElementById('foto').value = foto;
         document.getElementById('pemain2').value = pemain;
         document.getElementById('sutradara').value = sutradara;
         document.getElementById('produser').value = produser;

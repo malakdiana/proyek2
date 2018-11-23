@@ -290,7 +290,7 @@ td{
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-           <li class="menu-active"><a href="<?php echo site_url()?>/HomeUser">Home</a></li>
+           <li class="menu"><a href="<?php echo site_url()?>/HomeUser">Home</a></li>
           <li><a href="<?php echo site_url()?>/jadwal">Schedule</a></li>
           <li><a href="<?php echo site_url()?>/ProfilUser/pesan">Order</a></li>
         <?php   if($this->session->userdata('logged_in')) { ?>
