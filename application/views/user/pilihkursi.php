@@ -86,7 +86,7 @@ for($i=1;$i<=$kursi ;$i++){
     if ($x==true){?>
 
       <input  class="btn" style="margin-bottom: 30px; background: red">
-  }
+  
 <?php }else{?>
       <input name="<?php echo $i?>" class="btn" value="<?php echo "$i"; ?>" id="blue<?php echo $i?>" readonly class="btn" onclick="document.getElementById('blue<?php echo $i?>').style.background = 'blue';value='ok'" style="">
 <?php }} ?><br>

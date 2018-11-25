@@ -26,10 +26,10 @@
 
   <div class="w3-row">
     <a href="javascript:void(0)" onclick="openCity(event, 'profil');">
-      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding active">Update Profil</div>
+      <div class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding w3-show">Update Profil</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'password');">
-      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Update Password</div>
+      <div class="w3-half tablink w3-bottombar w3-hover-light-grey w3-padding">Update Password</div>
     </a>
    
   </div>
