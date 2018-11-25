@@ -1,3 +1,4 @@
+   <link href="<?php echo base_url()?>assets/user/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
  <div class="page-wrapper">
   
             <!-- ============================================================== -->
@@ -33,7 +34,9 @@
                             
                         <div class="card">
                             <div class="card-body">
-                                
+                             <a href="" data-toggle="modal" data-target="#myModal"
+                                <button class="btn btn-primary" style="align-self: right;width: 100px"><i class="ion ion-ios-printer"></i> save</button> </a><br><br>
+                               
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
@@ -113,6 +116,31 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
+     <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade-in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Save Data</h4>
+                </div>
+                <?php echo form_open('TabelPembelian/createpdf') ?>
+                <div class="modal-body">
+                     <div class="form-group">
+                      <label for="">Tanggal awal</label>
+                        <input class="form-control" id="datemulai" name="mulai" placeholder="YYYY-MM-DD" type="date"/>
+                        </div>
+                        <div class="form-group">
+                      <label for="">Tanggal akhir</label>
+                        <input class="form-control" id="dateselesai" name="selesai" placeholder="YYYY-MM-DD" type="date"/>
+                        </div>
+                        <div>  
+                        <button type="submit" class="btn btn-primary">Save</button> 
+
+                        </div>
+                  <?php echo form_close(); ?>
+
+            </div>
+        </div>
+    </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -147,6 +175,8 @@
     
     <script src="<?php echo base_url()?>/assets/admin/dist/js/pages/chart/chart-page-init.js"></script>
      <script src="<?php echo base_url();?>assets/datatables/jquery-2.2.4.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
         <script src="<?php echo base_url();?>assets/datatables/jquery-2.2.4.min.js"></script>
         <script src="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.js"></script>      
         <link rel="stylesheet" href="<?php echo base_url();?>assets/datatables/jquery.dataTables.min.css">

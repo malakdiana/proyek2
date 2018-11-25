@@ -83,8 +83,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <br><br><br><br><br><br>
-                <p><font size="5">Drama | Action</font></p>
-                <h2>Black Panther</h2>
+              
              
               </div>
             </div>

@@ -31,9 +31,7 @@
     <a href="javascript:void(0)" onclick="openCity(event, 'password');">
       <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Update Password</div>
     </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'saldo');">
-      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Balance</div>
-    </a>
+   
   </div>
 
   <div id="profil" class="w3-container city" style="display:none">
@@ -101,12 +99,9 @@
 </div>
 </div>
 </div>
+<br><br>
 
-
-  <div id="Tokyo" class="w3-container city" style="display:none">
-    <h2>Tokyo</h2>
-    <p>Tokyo is the capital of Japan.</p>
-  </div>
+ 
 </div>
 <br><br><br>
  <?=$this->session->flashdata('notif2')?>

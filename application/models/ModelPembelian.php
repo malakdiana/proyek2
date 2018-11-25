@@ -5,9 +5,17 @@ class ModelPembelian extends CI_Model {
 	public function getAllPembelian()
     {
         $query = $this->db->get('pembelian');
-        if($query->num_rows()>0){
+       
             return $query->result();
-        }
+        
+    }
+    public function report(){
+        $first_date= $this->input->post('mulai');
+        $second_date=$this->input->post('selesai');
+        $this->db->where('tanggalPesan >=', $first_date);
+        $this->db->where('tanggalPesan <=', $second_date);
+         $query = $this->db->get('pembelian');
+         return $query->result();
     }
 
     public function delete($id)

@@ -1,4 +1,5 @@
 
+ <body>
 <div class="col-md-9"> 
 <div style="background:#202120; color: white; height: 241px; text-align: center; margin-left: -20px;min-height: 1000px"><br>
 <div class="container">
@@ -45,7 +46,7 @@
                                         <td class="text-center"><?php echo $key->judulFilm ?></td>
                                         <td class="text-center"><?php echo $key->namaStudio ?></td>
                                         <td class="text-center"><?php echo $key->totalHarga?></td>
-                                      <td class="text-center"><a href="<?php echo base_url()?>index.php/ProfilUser/createPdf/<?php echo $key->noPembelian?>"><button class="btn btn-blues" style="">Download</button></a>
+                                      <td class="text-center"><a href="<?php echo base_url()?>index.php/ProfilUser/createPdf/<?php echo $key->noPembelian?>" title="download tiket"><button class="btn btn-blues" style=""> <i class="ion ion-ios-download"></i></button></a>
                                       <?php
                                       $tgl = date("Y-m-d");
                                       $tgl2 = $key->tanggalTayang;
@@ -56,7 +57,7 @@
                                                    
                                                     data-toggle="modal" 
                                                     data-target="#myModalEdit">
-                                                    <button class="btn btn-danger" style="">Cancel</button></a><?php
+                                                    <button class="btn btn-danger" style=""><i class="ion ion-ios-trash"></i></button></a><?php
 
                                         } ?></td>
                                         
