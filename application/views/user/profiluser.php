@@ -34,7 +34,7 @@
    
   </div>
 
-  <div id="profil" class="w3-container city" style="display:none">
+  <div id="profil" class="w3-container city" style="display:block">
     
     <Br><Br><div align="left" class="row"> 
     

@@ -51,7 +51,7 @@ $(function() {
       fields: [
       {
           name: "idStudio",
-          title: "id bioskop",
+          title: "id Studio",
           type: "text",
           width: 150
         },

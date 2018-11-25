@@ -125,6 +125,13 @@ class TabelAdmin extends CI_Controller {
         $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('TabelAdmin/daftarAdmin', 'refresh');
     }
+     public function updateAdmin(){
+      $this->load->model('ModelTabelAdmin');
+
+       $this->ModelTabelAdmin->updateAdmin();
+                redirect('TabelAdmin/daftarAdmin', 'refresh');
+
+    }
 
     public function update($id)
     {
